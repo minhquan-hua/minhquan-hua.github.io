@@ -92,6 +92,9 @@
   .article .kicker { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy-700); font-weight: 600; }
   .article h3 { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--navy-900); line-height: 1.35; }
   .article p { font-size: 0.9rem; color: var(--muted); }
+  .article-link { text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+  .article-link:hover { border-color: var(--navy-700); transform: translateY(-2px); }
+  .article .read { margin-top: auto; font-size: 0.85rem; font-weight: 600; color: var(--navy-700); }
   .article .soon { margin-top: auto; font-size: 0.8rem; color: var(--muted); font-style: italic; }
 
   /* About */
@@ -142,7 +145,7 @@
     <a href="#top" class="brand">Hua Minh Quan</a>
     <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <ul class="nav-links">
-      <li><a href="#work" data-vi="Dự án">Work</a></li>
+      <!-- <li><a href="#work" data-vi="Dự án">Work</a></li>  (tạm ẩn, mở lại khi có case study) -->
       <li><a href="#approach" data-vi="Cách làm">Approach</a></li>
       <li><a href="#articles" data-vi="Bài viết">Articles</a></li>
       <li><a href="#about" data-vi="Về tôi">About</a></li>
@@ -166,14 +169,15 @@
       <h1 data-vi="Tôi giúp tổ chức biến <em>bài toán kinh doanh</em> thành giải pháp học tập tạo ra thay đổi thật.">I help organizations turn <em>business problems</em> into learning that actually changes how people work.</h1>
       <p data-vi="Nền tảng kỹ sư, nhiều năm trong giáo dục và tư vấn đào tạo doanh nghiệp. Giờ đây tôi tập trung giải bài toán phát triển con người của một tổ chức — theo chiều sâu.">An engineer by training, shaped by years in education and corporate training consulting. Now focused on solving one organization's people-development challenges — in depth.</p>
       <div class="hero-cta">
-        <a href="#work" class="btn btn-light" data-vi="Xem dự án">See my work</a>
+        <a href="#approach" class="btn btn-light" data-vi="Xem cách tôi làm">See my approach</a>
         <a href="#contact" class="btn btn-ghost" data-vi="Liên hệ">Get in touch</a>
       </div>
     </div>
   </section>
 
   <!-- Work -->
-  <section id="work">
+  <!-- Mục Work đang tạm ẩn bằng thuộc tính hidden. Xoá chữ hidden để hiện lại. -->
+  <section id="work" hidden>
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-num">01 — <span data-vi="Dự án">Work</span></div>
@@ -218,7 +222,7 @@
   <section id="approach" class="alt">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-num">02 — <span data-vi="Cách làm">Approach</span></div>
+        <div class="sec-num">01 — <span data-vi="Cách làm">Approach</span></div>
         <div>
           <h2 data-vi="Học tập bắt đầu từ bài toán, không phải từ khoá học">Learning starts from the problem, not the course</h2>
         </div>
@@ -237,14 +241,14 @@
   <section id="articles">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-num">03 — <span data-vi="Bài viết">Articles</span></div>
+        <div class="sec-num">02 — <span data-vi="Bài viết">Articles</span></div>
         <div>
           <h2 data-vi="Ghi chép &amp; suy ngẫm">Notes &amp; reflections</h2>
           <p data-vi="Về học tập của người trưởng thành, văn hoá tổ chức và nghề L&amp;D.">On adult learning, organizational culture, and the craft of L&amp;D.</p>
         </div>
       </div>
       <div class="articles">
-        <div class="article"><span class="kicker" data-vi="Văn hoá">Culture</span><h3 data-vi="Tiêu đề bài viết 1">Article title 1</h3><p data-vi="Một câu tóm tắt nội dung bài viết.">A one-line summary of the article.</p><span class="soon" data-vi="Sắp ra mắt">Coming soon</span></div>
+        <a class="article article-link" href="articles/nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html"><span class="kicker" data-vi="Quản lý &amp; Lãnh đạo">Management &amp; Leadership</span><h3>Người giỏi nhất chưa chắc là quản lý giỏi nhất</h3><p data-vi="Xây khung năng lực cho quản lý tuyến đầu và cấp trung: bắt đầu từ đâu?">Building a competency framework for first-line and middle managers: where to start? <em>(in Vietnamese)</em></p><span class="read" data-vi="Đọc bài →">Read →</span></a>
         <div class="article"><span class="kicker" data-vi="Học tập">Learning</span><h3 data-vi="Tiêu đề bài viết 2">Article title 2</h3><p data-vi="Một câu tóm tắt nội dung bài viết.">A one-line summary of the article.</p><span class="soon" data-vi="Sắp ra mắt">Coming soon</span></div>
         <div class="article"><span class="kicker" data-vi="Nghề nghiệp">Career</span><h3 data-vi="Tiêu đề bài viết 3">Article title 3</h3><p data-vi="Một câu tóm tắt nội dung bài viết.">A one-line summary of the article.</p><span class="soon" data-vi="Sắp ra mắt">Coming soon</span></div>
       </div>
@@ -254,7 +258,7 @@
   <!-- About -->
   <section id="about" class="alt">
     <div class="wrap about">
-      <div class="sec-num">04 — <span data-vi="Về tôi">About</span></div>
+      <div class="sec-num">03 — <span data-vi="Về tôi">About</span></div>
       <div class="about-text">
         <p class="lead" data-vi="Tôi là người thích tìm hiểu cách con người học — và cách tổ chức giúp họ học tốt hơn.">I'm curious about how people learn — and how organizations can help them learn better.</p>
         <p data-vi="Hành trình của tôi đi qua kỹ thuật, một startup giáo dục, và tư vấn đào tạo doanh nghiệp. Ở mỗi chặng, điều tôi thích nhất luôn là giảng dạy, chia sẻ và xây giải pháp cùng mọi người.">My path runs through engineering, an education startup, and corporate training consulting. At every stage, what I enjoyed most was teaching, sharing, and building solutions with people.</p>
