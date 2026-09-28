@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Người giỏi nhất chưa chắc là quản lý giỏi nhất — Hua Minh Quan</title>
+<meta name="description" content="Xây khung năng lực cho quản lý tuyến đầu và cấp trung: bắt đầu từ đâu? Phân tích từ nghiên cứu học thuật, báo cáo Gallup, Gartner, McKinsey và trải nghiệm triển khai thực tế.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Người giỏi nhất chưa chắc là quản lý giỏi nhất">
+<meta property="og:description" content="Xây khung năng lực cho quản lý tuyến đầu và cấp trung: bắt đầu từ đâu?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #0F1E3A; --navy-800: #16284B; --navy-700: #1F3A68; --navy-100: #E6ECF5;
+    --ink: #1A2233; --muted: #5B6475; --line: #DCE1E8; --paper: #FFFFFF; --paper-alt: #F5F7FA;
+    --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.75; font-size: 17px; }
+  a { color: var(--navy-700); }
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy-900); text-decoration: none; }
+  .back { font-size: 0.9rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+  .back:hover { color: var(--navy-700); }
+
+  .article-hero { background: var(--navy-900); color: #fff; padding: 80px 0 64px; }
+  .col { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9FB3D6; font-weight: 600; }
+  .article-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin: 16px 0 16px; }
+  .article-hero .sub { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: #C9D3E4; }
+  .meta { margin-top: 28px; font-size: 0.85rem; color: #9FB3D6; }
+
+  article { padding: 56px 0 40px; }
+  .intro-note { font-size: 0.92rem; color: var(--muted); font-style: italic; border-left: 2px solid var(--line); padding-left: 16px; margin-bottom: 40px; }
+  article h2 { font-family: var(--serif); font-weight: 600; font-size: 1.65rem; color: var(--navy-900); line-height: 1.3; margin: 52px 0 18px; }
+  article h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--navy-800); margin: 36px 0 12px; }
+  article p { margin-bottom: 18px; }
+  article ul, article ol { margin: 0 0 20px 22px; }
+  article li { margin-bottom: 8px; }
+  article strong { color: var(--navy-900); }
+  .pull { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--navy-800); border-left: 3px solid var(--navy-700); padding: 4px 0 4px 20px; margin: 28px 0; }
+  sup a, a.cite { text-decoration: none; font-size: 0.78em; font-weight: 600; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0 28px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.9rem; line-height: 1.55; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy-800); color: #fff; font-weight: 600; font-size: 0.82rem; }
+  tr:nth-child(even) td { background: var(--paper-alt); }
+  td:first-child { font-weight: 600; color: var(--navy-900); width: 22%; }
+
+  .closing { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--navy-800); margin-top: 28px; }
+  .refs { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 12px; }
+  .refs ol { font-size: 0.86rem; color: var(--muted); line-height: 1.6; margin-left: 20px; }
+  .refs li { margin-bottom: 12px; word-break: break-word; }
+  .refs li:target { background: var(--navy-100); }
+
+  .author { background: var(--paper-alt); padding: 48px 0; margin-top: 40px; }
+  .author p { font-size: 0.95rem; color: var(--muted); }
+  .author strong { color: var(--navy-900); font-family: var(--serif); font-size: 1.1rem; display: block; margin-bottom: 6px; }
+  .author .links { margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; }
+  footer { background: var(--navy-900); color: #8A9AB8; font-size: 0.82rem; padding: 26px 0; }
+
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .nav, .col { padding: 0 16px; }
+    .article-hero { padding: 56px 0 44px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">Hua Minh Quan</a>
+    <a href="../index.html#articles" class="back">← Tất cả bài viết</a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="col">
+    <div class="eyebrow">Quản lý &amp; Lãnh đạo · Khung năng lực</div>
+    <h1>Người giỏi nhất chưa chắc là quản lý giỏi nhất</h1>
+    <p class="sub">Xây khung năng lực cho quản lý tuyến đầu và cấp trung: bắt đầu từ đâu?</p>
+    <div class="meta">Hua Minh Quan · Tháng 9, 2026 · Khoảng 12 phút đọc</div>
+  </div>
+</section>
+
+<article>
+  <div class="col">
+    <p class="intro-note">Bài viết tổng hợp từ các nghiên cứu học thuật, báo cáo của các tổ chức nghiên cứu, tư vấn quản trị và quan sát của người viết trong quá trình triển khai dự án đào tạo cùng doanh nghiệp. Tên và chi tiết nhân vật đã được thay đổi. Nguồn tham khảo được đánh số và liệt kê ở cuối bài.</p>
+
+    <h2>Một câu chuyện quen thuộc</h2>
+    <p>Anh Tuấn đứng đầu khu vực về doanh số ba năm liền trong vai trò sales rep của một công ty FMCG. Anh hiểu khách hàng, nắm chắc từng điểm bán và gần như chưa bao giờ trượt chỉ tiêu. Khi vị trí Sales Lead bỏ trống, chẳng ai nghi ngờ gì chuyện anh được chọn.</p>
+    <p>Sáu tháng sau, doanh số của team đi xuống, hai trong bảy bạn đã nghỉ việc. Còn anh Tuấn thì cứ cuối tháng lại tự ra thị trường chốt đơn thay cấp dưới, vì "làm cho nhanh, chứ chỉ tụi nó thì không kịp".</p>
+    <p class="pull">Công ty mất một sales giỏi và nhận về một quản lý đang loay hoay.</p>
+    <p>Nếu nghĩ đây chỉ là chuyện của riêng một cá nhân, dữ liệu sẽ cho thấy điều ngược lại. Khi phân tích gần 40.000 nhân viên bán hàng tại 131 doanh nghiệp, ba nhà kinh tế học Alan Benson, Danielle Li và Kelly Shue nhận thấy người bán giỏi hơn có khả năng được thăng chức cao hơn rõ rệt. Nhưng sau khi lên quản lý, doanh số trước đó càng cao thì hiệu quả của team họ dẫn dắt lại càng <em>thấp</em>: doanh số cá nhân gấp đôi tương ứng với mức giá trị gia tăng của người quản lý giảm khoảng 7,5% <sup><a href="#ref-1">[1]</a></sup>. Nghiên cứu đăng trên <em>The Quarterly Journal of Economics</em> này được xem là một trong những bằng chứng định lượng rõ ràng nhất cho "nguyên lý Peter": người ta thường được thăng chức cho đến khi đạt tới vị trí mình không còn làm tốt.</p>
+    <p>Câu chuyện này tôi gặp lại ở nhiều doanh nghiệp, chỉ khác bối cảnh: một công nhân lành nghề lên làm tổ trưởng, một chuyên viên giỏi nghiệp vụ được đề bạt thành trưởng phòng, một kỹ sư xuất sắc trở thành trưởng nhóm. Họ không kém. Họ đang được yêu cầu làm một công việc hoàn toàn khác.</p>
+
+    <h2>Mắt xích quan trọng nhất cũng là mắt xích chịu áp lực nhất</h2>
+    <p>Trước khi đi tiếp, cần nói rõ bài viết này bàn về nhóm nào. Tôi gộp hai nhóm vì họ chia sẻ cùng một bài toán chuyển đổi:</p>
+    <ul>
+      <li><strong>Quản lý tuyến đầu (first-line manager)</strong>: trực tiếp quản lý người làm, ví dụ tổ trưởng, trưởng ca, Sales Lead, Team Lead.</li>
+      <li><strong>Quản lý cấp trung (middle manager)</strong>: quản lý các quản lý, ví dụ ASM quản lý các Sales Lead, quản đốc quản lý các trưởng ca.</li>
+    </ul>
+    <p>Hai nhóm này là nơi chiến lược của ban lãnh đạo biến thành việc làm hằng ngày của đội ngũ. Gallup ước tính người quản lý giải thích <em>ít nhất</em> 70% sự khác biệt về điểm gắn kết giữa các đơn vị kinh doanh, dựa trên dữ liệu tích lũy từ hàng triệu nhân viên trong hai thập kỷ <sup><a href="#ref-2">[2]</a></sup>. Con số này thường bị trích dẫn thành "quản lý quyết định 70% sự gắn kết". Cách hiểu chính xác hơn là: khi hai team trong cùng một công ty có mức gắn kết rất khác nhau, người quản lý là lời giải thích lớn nhất cho khoảng cách đó.</p>
+    <p>Cũng chính nhóm này đang chịu áp lực lớn. Báo cáo <em>State of the Global Workplace 2026</em> của Gallup cho thấy tỷ lệ quản lý gắn kết với công việc trên toàn cầu chỉ còn 22% trong năm 2025, giảm 9 điểm phần trăm so với năm 2022 <sup><a href="#ref-3">[3]</a></sup>. Ở phía tổ chức, 75% lãnh đạo nhân sự trong khảo sát năm 2024 của Gartner cho biết đội ngũ quản lý của họ đang quá tải vì trách nhiệm ngày càng mở rộng. Phát triển đội ngũ lãnh đạo – quản lý là ưu tiên số một của HR năm thứ ba liên tiếp <sup><a href="#ref-4">[4]</a></sup>.</p>
+    <p class="pull">Người quản lý khó truyền năng lượng cho đội ngũ khi chính họ đang cạn năng lượng.</p>
+
+    <h2>Vì sao người giỏi chuyên môn lại vấp khi làm quản lý?</h2>
+    <p>Đề bạt người giỏi chuyên môn lên quản lý là cách làm hợp lý và phổ biến trên toàn thế giới: họ hiểu công việc, có uy tín với đồng nghiệp và đã chứng minh sự cam kết. Khó khăn không nằm ở quyết định đề bạt, mà ở những gì xảy ra xung quanh nó. Theo quan sát của tôi, có ba tầng yếu tố đan xen.</p>
+
+    <h3>Tầng 1 – Cá nhân: chiếc neo tư duy</h3>
+    <p>Linda Hill, giáo sư Trường Kinh doanh Harvard, đã theo dõi các quản lý mới trong năm đầu nhận vai trò và mô tả đây là "phép thử sớm nhất của năng lực lãnh đạo" <sup><a href="#ref-5">[5]</a></sup>. Một trong những ngộ nhận phổ biến nhất bà ghi nhận là quản lý mới tin rằng quyền hạn đến từ chức danh. Trên thực tế, họ nhanh chóng nhận ra quyền hạn ấy khá hạn chế và phải xây dựng ảnh hưởng qua niềm tin của cấp dưới, đồng cấp và cấp trên.</p>
+    <p>Tôi cho rằng chuyển đổi khó nhất không phải là học thêm kỹ năng mới. Khó nhất là <strong>thay đổi định nghĩa về thành công của chính mình</strong>: từ "tôi thành công khi tôi tạo ra kết quả" sang "tôi chỉ thành công khi đội ngũ của tôi thành công". Khi áp lực tăng, người ta có xu hướng quay về điều mình giỏi nhất. Đó là lý do anh Tuấn lại ra thị trường chốt đơn.</p>
+
+    <h3>Tầng 2 – Cơ chế vận hành: những thiết kế hợp lý nhưng chưa đồng bộ</h3>
+    <p>Phần lớn cơ chế nhân sự trong doanh nghiệp được xây dựng với ý định tốt và phù hợp với giai đoạn tổ chức ra đời. Nhưng khi đặt cạnh nhau, chúng có thể vô tình tạo ra những tín hiệu ngược chiều cho người quản lý mới.</p>
+    <ul>
+      <li><strong>Thành tích chuyên môn là căn cứ dễ đo nhất.</strong> Khi cần ra quyết định nhanh, doanh số hay năng suất là dữ liệu rõ ràng và công bằng nhất trong tay. Nghiên cứu của Benson và cộng sự cho thấy điều này đúng ở hầu hết doanh nghiệp họ khảo sát, và chỉ ra một chỉ báo tốt hơn thường bị bỏ qua: <em>những nhân viên hay hỗ trợ, phối hợp với đồng nghiệp lại có xu hướng trở thành quản lý giỏi hơn</em> <sup><a href="#ref-1">[1]</a></sup>. Gallup cũng ước tính chỉ khoảng một trong mười người có tố chất quản lý cao, nên việc nhận diện đúng người là bài toán khó ở bất kỳ tổ chức nào <sup><a href="#ref-2">[2]</a></sup>.</li>
+      <li><strong>Vai trò "vừa đá bóng vừa huấn luyện".</strong> Nhiều vị trí quản lý tuyến đầu vẫn gắn với chỉ tiêu cá nhân, điều thường hợp lý về mặt kinh doanh. Khảo sát của McKinsey với hơn 700 quản lý cấp trung cho thấy họ dành gần một nửa thời gian cho công việc không mang tính quản lý, và chưa đến một phần ba cho việc phát triển con người <sup><a href="#ref-6">[6]</a></sup>. Khi hai vai trò cùng đòi thời gian, vai trò có kết quả đo được ngay thường được ưu tiên.</li>
+      <li><strong>Quản lý của quản lý cũng đang quá tải.</strong> Linda Hill nhấn mạnh quản lý cấp cao cần chủ động đồng hành với quản lý mới <sup><a href="#ref-5">[5]</a></sup>. Nhưng khi chính cấp trên cũng quá tải (như số liệu của Gallup và Gartner ở trên), việc kèm cặp dễ bị đẩy xuống sau những việc cấp bách hơn.</li>
+      <li><strong>Lộ trình kế nhiệm cần thời gian để hình thành.</strong> Một kế hoạch kế nhiệm (succession planning) bài bản giúp ứng viên được chuẩn bị <em>trước</em> khi nhận vai trò. Đây là khoản đầu tư dài hạn mà nhiều tổ chức đang trên đường xây dựng. Tôi sẽ bàn sâu hơn về chủ đề này ở một bài riêng.</li>
+    </ul>
+
+    <h3>Tầng 3 – Điều kiện triển khai: nguồn lực và khả năng chứng minh hiệu quả</h3>
+    <p>Ngay cả khi tổ chức đã nhận diện rõ vấn đề, việc phát triển đội ngũ quản lý vẫn phải cân đối ba điều kiện: <strong>ngân sách</strong>, <strong>thời gian</strong> (quản lý tuyến đầu gần như không thể rời vị trí nhiều ngày để đi học) và <strong>khả năng đo lường</strong> tác động. Điều kiện thứ ba đặc biệt quan trọng. Theo Gartner, hơn một nửa số tổ chức đã tăng chi tiêu cho phát triển lãnh đạo nhưng chưa thấy được kết quả tương xứng <sup><a href="#ref-4">[4]</a></sup>. Khi chưa chứng minh được tác động, mỗi đồng ngân sách tiếp theo sẽ khó bảo vệ hơn.</p>
+
+    <h2>Vì sao nên bắt đầu từ khung năng lực?</h2>
+    <p>Nhìn lại ba tầng yếu tố, có một câu hỏi nằm ở gốc của tất cả: <strong>ở tổ chức của chúng ta, một người quản lý giỏi trông như thế nào?</strong></p>
+    <p>Khi câu hỏi này chưa có câu trả lời chung:</p>
+    <ul>
+      <li>Thành tích chuyên môn gần như là căn cứ duy nhất khi <strong>đề bạt</strong>.</li>
+      <li>Chương trình <strong>phát triển</strong> dễ thành một danh sách khóa học kỹ năng mềm rời rạc.</li>
+      <li>Không có chuẩn chung để <strong>đo lường</strong> sự thay đổi.</li>
+    </ul>
+    <p>Khung năng lực là câu trả lời có cấu trúc cho câu hỏi đó, là sợi chỉ nối ba khâu đề bạt, phát triển và đánh giá. Một chi tiết đáng chú ý: Gallup nhấn mạnh rằng <em>lựa chọn đúng người</em> có sức nặng không kém <em>đào tạo</em> <sup><a href="#ref-2">[2]</a></sup>. Nghĩa là khung năng lực cần được dùng ngay từ khâu chọn người, chứ không chỉ là đầu vào để thiết kế khóa học.</p>
+    <p>Nhưng khung năng lực chỉ hữu ích khi nó được viết bằng <strong>hành vi quan sát được hằng ngày</strong>, thay vì những tính từ chung chung như "có tầm nhìn" hay "giao tiếp tốt".</p>
+
+    <h2>Xương sống: 6 thói quen hằng ngày của người dẫn dắt đội ngũ</h2>
+    <p>Tôi chọn <strong>6 Critical Practices for Leading a Team®</strong> (6CP) của FranklinCovey <sup><a href="#ref-7">[7]</a></sup> làm xương sống. Để minh bạch với người đọc: đây là chương trình tôi đã trực tiếp tham gia triển khai trong thời gian làm việc tại PACE, đối tác của FranklinCovey tại Việt Nam, cho ba nhóm khách hàng khá khác nhau:</p>
+    <ul>
+      <li><strong>FMCG</strong>: chủ yếu là đội ngũ quản lý kinh doanh.</li>
+      <li><strong>Fintech</strong>: toàn bộ đội ngũ quản lý cấp trung.</li>
+      <li><strong>Ngân hàng</strong>: nhóm giám đốc chi nhánh và trưởng phòng tại hội sở.</li>
+    </ul>
+    <p>Vì vậy, những nhận định dưới đây đến từ trải nghiệm thực tế, và người đọc nên cân nhắc chúng với góc nhìn đó.</p>
+    <p>Có ba lý do tôi cho rằng 6CP phù hợp với bài toán của bài viết này:</p>
+    <ol>
+      <li><strong>Nó bắt đầu từ đúng điểm nghẽn.</strong> Tiền đề của mô hình chính là cú chuyển tư duy đã nói ở Tầng 1: từ người đóng góp cá nhân sang người đạt kết quả <em>thông qua</em> đội ngũ, chứ không phải <em>bằng cái giá</em> của đội ngũ.</li>
+      <li><strong>Nó được viết ở dạng thói quen, không phải năng lực trừu tượng.</strong> Mỗi practice là một nhóm hành vi mà quản lý có thể làm ngay trong tuần, nên rất dễ chuyển thành tiêu chí quan sát và đo lường.</li>
+      <li><strong>Nó cân bằng giữa kết quả và con người.</strong> Quản lý được kỳ vọng đặt yêu cầu cao, đồng thời thực sự quan tâm đến đội ngũ, thay vì phải chọn một trong hai.</li>
+    </ol>
+    <p>Qua ba nhóm khách hàng trên, điểm tôi thấy được đánh giá cao nhất là <strong>tính ứng dụng</strong>. Các chương trình nền tảng về văn hóa và hiệu quả cá nhân, như <em>The 7 Habits of Highly Effective People®</em> hay <em>The Speed of Trust®</em> cũng của FranklinCovey, rất giá trị khi tổ chức muốn xây dựng nền móng chung lâu dài. Nhưng với những nhóm quản lý khối lượng công việc lớn, chịu áp lực chỉ tiêu và quen hành động nhanh như đội ngũ kinh doanh, câu hỏi đầu tiên họ đặt ra thường là: <em>"Thứ Hai tuần sau tôi làm gì khác đi với team của mình?"</em> 6CP trả lời trực tiếp câu hỏi đó, nên dễ được chính người học đón nhận. Có thể xem đây là giải pháp được thiết kế riêng cho quản lý tuyến đầu và cấp trung, nhóm đang có nhu cầu phát triển rất lớn như các số liệu ở đầu bài đã cho thấy.</p>
+    <p>Dưới đây là cách tôi diễn giải sáu practice và đối chiếu với những điểm nghẽn đã phân tích ở trên:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Practice</th><th>Hiểu ngắn gọn</th><th>Giải quyết điểm nghẽn nào</th><th>Bằng chứng độc lập</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. Align Purpose &amp; Performance</td><td>Giúp từng người thấy công việc của mình nối với mục tiêu chung như thế nào</td><td>Vai trò "cầu nối" đưa chiến lược xuống đội ngũ</td><td>Gallup: quản lý là yếu tố lớn nhất tạo khác biệt về gắn kết giữa các team <a class="cite" href="#ref-2">[2]</a></td></tr>
+          <tr><td>2. Communicate as a Coach</td><td>Hỏi nhiều hơn chỉ đạo, để người khác tự tìm ra lời giải</td><td>Thói quen "làm thay cho nhanh"</td><td>Project Oxygen: "là một người coach giỏi" đứng đầu các hành vi của quản lý giỏi tại Google <a class="cite" href="#ref-8">[8]</a></td></tr>
+          <tr><td>3. Delegate to Elevate</td><td>Giao việc theo năng lực và mức sẵn sàng của từng người, kèm mức hỗ trợ phù hợp</td><td>Vai trò "vừa đá bóng vừa huấn luyện"</td><td>McKinsey: quản lý dành gần nửa thời gian cho việc không mang tính quản lý <a class="cite" href="#ref-6">[6]</a></td></tr>
+          <tr><td>4. Use Feedback as Fuel</td><td>Phản hồi thường xuyên, cụ thể, hướng tới hành động tiếp theo, và chủ động xin phản hồi</td><td>Thiếu cơ chế học hỏi liên tục trong team</td><td>Linda Hill: quản lý mới học nhanh hơn khi dám xin phản hồi, hỗ trợ từ cấp trên <a class="cite" href="#ref-5">[5]</a></td></tr>
+          <tr><td>5. Gain, Don't Drain, Energy</td><td>Quản lý năng lượng của bản thân như một nguồn lực chiến lược, làm gương cho đội ngũ</td><td>Quản lý kiệt sức, mất gắn kết</td><td>Gallup: gắn kết của quản lý toàn cầu còn 22% <a class="cite" href="#ref-3">[3]</a>; Gartner: 75% HR thấy quản lý quá tải <a class="cite" href="#ref-4">[4]</a></td></tr>
+          <tr><td>6. Leverage 1-on-1s to Win</td><td>Duy trì 1:1 đều đặn, có trách nhiệm từ cả hai phía và phù hợp với từng người</td><td>Thiếu kênh kèm cặp và kết nối thường xuyên</td><td>Linda Hill: vai trò đồng hành của cấp trên với quản lý mới <a class="cite" href="#ref-5">[5]</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Hai lưu ý khi áp dụng:</p>
+    <ul>
+      <li><strong>Với quản lý cấp trung</strong>, sáu practice này không thay đổi, nhưng đối tượng thay đổi: họ thực hành với <em>các quản lý tuyến đầu</em> của mình. Lợi thế lớn là cả hai cấp dùng chung một ngôn ngữ, nên quản lý cấp trung có thể trực tiếp coach cấp dưới theo đúng những gì cấp dưới đang học.</li>
+      <li><strong>Mô hình cần được "dịch" theo bối cảnh.</strong> Ví dụ, với Sales Lead ngành FMCG, practice 2 và 3 có thể được mô tả thành <em>đi thị trường cùng sales rep một số buổi cố định mỗi tuần với vai trò quan sát và phản hồi, không làm thay</em>.</li>
+    </ul>
+
+    <h2>Từ khung năng lực đến hành động: 4 bước</h2>
+    <h3>Bước 1 – Định nghĩa</h3>
+    <p>Lấy sáu practice làm khung, rồi cụ thể hóa thành hành vi quan sát được theo từng vị trí, với ba lớp <strong>Tư duy – Kỹ năng – Công cụ</strong>. Nên làm cùng ban lãnh đạo và chính những quản lý đang làm tốt trong tổ chức.</p>
+    <p>Một ví dụ đáng tham khảo về cách làm là <strong>Project Oxygen</strong> của Google. Xuất phát điểm của dự án là một giả thuyết hoài nghi: liệu quản lý có thực sự tạo ra khác biệt? Nhưng dữ liệu nội bộ cho thấy các team có quản lý giỏi đạt kết quả tốt hơn, hài lòng hơn và có tỷ lệ nghỉ việc thấp hơn <sup><a href="#ref-8">[8]</a></sup>. Điều đáng học là: <strong>khung năng lực mạnh nhất khi được kiểm chứng bằng dữ liệu và hành vi thực tế của chính tổ chức</strong>, kể cả khi xuất phát từ một mô hình có sẵn.</p>
+
+    <h3>Bước 2 – Lựa chọn</h3>
+    <p>Đưa khung năng lực vào tiêu chí đề bạt. Ngoài thành tích chuyên môn, cần đánh giá <strong>tiềm năng quản lý</strong>. Nghiên cứu của Benson và cộng sự gợi ý một chỉ báo cụ thể: mức độ người đó hỗ trợ và phối hợp với đồng nghiệp <sup><a href="#ref-1">[1]</a></sup>. Người có thói quen giúp đồng nghiệp gỡ vướng thường đã có sẵn mầm mống của practice 2 và 3.</p>
+    <p>Quan trọng không kém là <em>mong muốn thật sự</em> được làm quản lý. Không phải ai giỏi cũng muốn quản lý. Chính nhóm nghiên cứu trên chỉ ra cách một số doanh nghiệp như Microsoft hay IBM giải bài toán này: xây dựng <strong>lộ trình nghề nghiệp song song</strong> để người giỏi chuyên môn vẫn được thăng tiến mà không cần chuyển sang quản lý <sup><a href="#ref-1">[1]</a></sup>.</p>
+
+    <h3>Bước 3 – Phát triển</h3>
+    <p>Để giải bài toán thời gian và ngân sách, tôi áp dụng tinh thần <strong>70-20-10</strong>, bắt nguồn từ các nghiên cứu tại Center for Creative Leadership <sup><a href="#ref-9">[9]</a></sup>: phần lớn việc học của nhà quản lý diễn ra qua trải nghiệm thực tế, một phần qua kèm cặp và phản hồi, phần nhỏ qua lớp học chính thức. Cần lưu ý đây là một định hướng thiết kế, không phải tỷ lệ đã được kiểm chứng chặt chẽ. Với sáu practice, điều này có nghĩa là:</p>
+    <ul>
+      <li><strong>Lớp học (10)</strong>: các học phần ngắn, mỗi học phần tập trung vào một practice, để quản lý không phải rời vị trí nhiều ngày liền.</li>
+      <li><strong>Kèm cặp (20)</strong>: cấp trên trực tiếp dùng chính practice 6 (1:1) và practice 4 (phản hồi) để kèm quản lý mới.</li>
+      <li><strong>Trải nghiệm (70)</strong>: sau mỗi học phần, quản lý áp dụng practice đó với team của mình trong vài tuần, gắn với chính KPI của team, rồi mới sang practice tiếp theo.</li>
+    </ul>
+
+    <h3>Bước 4 – Đo lường</h3>
+    <p>Dùng mô hình <strong>Kirkpatrick</strong> với bốn cấp độ: <em>Phản ứng → Học được → Thay đổi hành vi → Kết quả</em> <sup><a href="#ref-10">[10]</a></sup>. Phần lớn chương trình dừng ở cấp 1 và 2, tức phiếu khảo sát cuối khóa và bài kiểm tra. Lợi thế của khung dạng thói quen là cấp 3 trở nên dễ đo hơn nhiều: <em>quản lý có duy trì 1:1 đều đặn không? Tỷ lệ việc được giao thay vì tự làm thay đổi ra sao? Đội ngũ đánh giá chất lượng phản hồi thế nào?</em> Từ đó nối với <strong>cấp 4</strong> (tỷ lệ nghỉ việc của team, mức độ gắn kết, kết quả kinh doanh). Đây là cách để trả lời câu hỏi "đầu tư có hiệu quả không" mà Gartner cho thấy nhiều tổ chức đang gặp phải <sup><a href="#ref-4">[4]</a></sup>.</p>
+
+    <h2>Lời kết</h2>
+    <p>Đề bạt một người giỏi lên làm quản lý là một khoản đầu tư. Nếu thiếu sự chuẩn bị, tổ chức có thể nhận về một người quản lý tốt, nhưng cũng có thể mất cả một nhân sự giỏi lẫn một team.</p>
+    <p>Khung năng lực không giải quyết mọi thứ. Nhưng nó biến câu hỏi "người này có làm quản lý được không?" từ cảm tính thành một cuộc trao đổi có căn cứ, và cho những người làm phát triển con người một điểm tựa để thiết kế, triển khai và chứng minh giá trị.</p>
+    <p class="closing">Còn ở tổ chức của bạn, khi một nhân sự giỏi được đề bạt lên quản lý, điều gì đang xảy ra trong 90 ngày đầu tiên của họ?</p>
+
+    <div class="refs">
+      <h2>Tài liệu tham khảo</h2>
+      <ol>
+        <li id="ref-1">Benson, A., Li, D., &amp; Shue, K. (2019). Promotions and the Peter Principle. <em>The Quarterly Journal of Economics</em>, 134(4), 2085–2134. <a href="https://academic.oup.com/qje/article/134/4/2085/5550760" target="_blank" rel="noopener">academic.oup.com</a> · Tóm tắt: <a href="https://cepr.org/voxeu/columns/promotions-and-peter-principle" target="_blank" rel="noopener">cepr.org</a></li>
+        <li id="ref-2">Beck, R., &amp; Harter, J. (2015). Managers Account for 70% of Variance in Employee Engagement. <em>Gallup Business Journal</em>. <a href="https://news.gallup.com/businessjournal/182792/managers-account-variance-employee-engagement.aspx" target="_blank" rel="noopener">news.gallup.com</a></li>
+        <li id="ref-3">Gallup (2026). <em>State of the Global Workplace 2026</em>. <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener">gallup.com</a></li>
+        <li id="ref-4">Gartner (2024). Gartner Survey Finds Leader and Manager Development Tops HR Leaders' List of 2025 Priorities for Third Consecutive Year. <a href="https://www.gartner.com/en/newsroom/press-releases/2024-10-15-gartner-survey-finds-leader-and-manager-development-tops-hrleaders-list" target="_blank" rel="noopener">gartner.com</a></li>
+        <li id="ref-5">Hill, L. A. (2007). Becoming the Boss. <em>Harvard Business Review</em>, January 2007. <a href="https://hbr.org/2007/01/becoming-the-boss" target="_blank" rel="noopener">hbr.org</a></li>
+        <li id="ref-6">McKinsey &amp; Company (2023). Stop wasting your most precious resource: Middle managers. <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/stop-wasting-your-most-precious-resource-middle-managers" target="_blank" rel="noopener">mckinsey.com</a></li>
+        <li id="ref-7">FranklinCovey. <em>The 6 Critical Practices for Leading a Team®</em>. <a href="https://www.franklincovey.com/courses/6-critical-practices/" target="_blank" rel="noopener">franklincovey.com</a></li>
+        <li id="ref-8">Google re:Work. Following the data: The research behind great managers. <a href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener">rework.withgoogle.com</a></li>
+        <li id="ref-9">McCall, M. W., Lombardo, M. M., &amp; Morrison, A. M. (1988). <em>The Lessons of Experience: How Successful Executives Develop on the Job</em>. Lexington Books.</li>
+        <li id="ref-10">Kirkpatrick, D. L., &amp; Kirkpatrick, J. D. (2006). <em>Evaluating Training Programs: The Four Levels</em> (3rd ed.). Berrett-Koehler.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<section class="author">
+  <div class="col">
+    <strong>Hua Minh Quan</strong>
+    <p>Learning &amp; Development tại TP. Hồ Chí Minh. Nền tảng kỹ sư, nhiều năm trong giáo dục và tư vấn đào tạo doanh nghiệp.</p>
+    <div class="links">
+      <a href="../index.html">Trang chủ</a>
+      <a href="https://www.linkedin.com/in/huaminhquan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:minhquan.hua.bio@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="col">© 2026 Hua Minh Quan</div>
+</footer>
+
+</body>
+</html>
