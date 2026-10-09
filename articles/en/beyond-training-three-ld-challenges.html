@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When L&amp;D is about more than training and developing people — Hua Minh Quan</title>
+<meta name="description" content="Three challenges L&D teams face at once: budget, measuring effectiveness and workload, and why the answer starts with the business problem.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When L&amp;D is about more than training and developing people">
+<meta property="og:description" content="Three challenges L&D teams face at once: budget, measuring effectiveness and workload, and why the answer starts with the business problem.">
+<link rel="alternate" hreflang="vi" href="../khi-ld-khong-chi-la-chuyen-dao-tao.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #0F1E3A; --navy-800: #16284B; --navy-700: #1F3A68; --navy-100: #E6ECF5;
+    --ink: #1A2233; --muted: #5B6475; --line: #DCE1E8; --paper: #FFFFFF; --paper-alt: #F5F7FA;
+    --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.75; font-size: 17px; }
+  a { color: var(--navy-700); }
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy-900); text-decoration: none; white-space: nowrap; }
+  .nav-right { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+  .lang-switch { font-size: 0.82rem; font-weight: 600; color: var(--muted); display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+  .lang-switch a { color: var(--muted); text-decoration: none; }
+  .lang-switch a:hover { color: var(--navy-700); }
+  .lang-switch .on { color: var(--navy-900); border-bottom: 2px solid var(--navy-700); }
+  .lang-switch .sep { color: var(--line); }
+  .btn-home { font-size: 0.85rem; font-weight: 600; color: var(--navy-800); text-decoration: none; border: 1px solid var(--navy-800); padding: 6px 12px; border-radius: 4px; white-space: nowrap; }
+  .btn-home:hover { background: var(--navy-800); color: #fff; }
+  .article-hero { background: var(--navy-900); color: #fff; padding: 80px 0 64px; }
+  .col { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9FB3D6; font-weight: 600; }
+  .article-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4.6vw, 2.8rem); line-height: 1.2; margin: 16px 0 16px; }
+  .article-hero .sub { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: #C9D3E4; }
+  .meta { margin-top: 28px; font-size: 0.85rem; color: #9FB3D6; }
+  article { padding: 48px 0 40px; }
+  .intro-note { list-style: none; font-size: 0.88rem; color: var(--muted); font-style: italic; border-left: 2px solid var(--line); padding-left: 16px; margin: 0 0 36px 0 !important; }
+  .intro-note li { margin-bottom: 4px !important; }
+  article h2 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; color: var(--navy-900); line-height: 1.3; margin: 48px 0 18px; }
+  article h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--navy-800); margin: 34px 0 12px; }
+  article p { margin-bottom: 18px; }
+  article ul, article ol { margin: 0 0 20px 22px; }
+  article li { margin-bottom: 8px; }
+  article strong { color: var(--navy-900); }
+  .xref { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 500; }
+  .pull { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--navy-800); border-left: 3px solid var(--navy-700); padding: 4px 0 4px 20px; margin: 28px 0; }
+  sup a { text-decoration: none; font-size: 0.78em; font-weight: 600; }
+  .table-wrap { overflow-x: auto; margin: 24px 0 28px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.9rem; line-height: 1.55; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy-800); color: #fff; font-weight: 600; font-size: 0.82rem; }
+  tr:nth-child(even) td { background: var(--paper-alt); }
+  td:first-child { font-weight: 600; color: var(--navy-900); width: 22%; }
+  .fig { margin: 28px 0 32px; }
+  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fig-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+  .fig figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+  .series { margin-top: 56px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 4px; padding: 22px 24px; }
+  .series-title { font-family: var(--serif); font-weight: 600; color: var(--navy-900); font-size: 1.1rem; margin-bottom: 10px; }
+  .series ol { margin: 0 0 0 20px !important; font-size: 0.95rem; }
+  .series li { margin-bottom: 6px; }
+  .series li.cur span { font-weight: 600; color: var(--navy-900); }
+  .series li.cur em { color: var(--muted); font-size: 0.85em; }
+  .refs { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 12px; }
+  .refs ol { font-size: 0.86rem; color: var(--muted); line-height: 1.6; margin-left: 20px; }
+  .refs li { margin-bottom: 12px; word-break: break-word; }
+  .refs li:target { background: var(--navy-100); }
+  .back-wrap { margin-top: 40px; }
+  .btn-back { display: inline-block; background: var(--navy-800); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.92rem; padding: 12px 20px; border-radius: 4px; }
+  .btn-back:hover { background: var(--navy-700); }
+  .author { background: var(--paper-alt); padding: 48px 0; margin-top: 40px; }
+  .author p { font-size: 0.95rem; color: var(--muted); }
+  .author strong { color: var(--navy-900); font-family: var(--serif); font-size: 1.1rem; display: block; margin-bottom: 6px; }
+  .author .links { margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; }
+  footer { background: var(--navy-900); color: #8A9AB8; font-size: 0.82rem; padding: 26px 0; }
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .nav, .col { padding: 0 16px; }
+    .brand { font-size: 1.05rem; }
+    .nav-right { gap: 10px; }
+    .btn-home { padding: 5px 9px; font-size: 0.8rem; }
+    .article-hero { padding: 56px 0 44px; }
+    .fig-svg { min-width: 560px; }
+  }
+  @media (max-width: 420px) {
+    .brand { display: none; }
+    .nav { justify-content: space-between; }
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="../../index.html" class="brand">Hua Minh Quan</a>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language"><a href="../khi-ld-khong-chi-la-chuyen-dao-tao.html">Tiếng Việt</a><span class="sep">|</span><span class="on">English</span></div>
+      <a href="../../index.html" class="btn-home">← Home</a>
+    </div>
+  </div>
+</header>
+<section class="article-hero">
+  <div class="col">
+    <div class="eyebrow">Series · Part 1 · Perspective</div>
+    <h1>When L&amp;D is about more than training and developing people</h1>
+    <p class="sub">Three big challenges on the path to becoming an internal partner in organizational growth</p>
+    <div class="meta">Hua Minh Quan · October 2026 · 10 min read</div>
+  </div>
+</section>
+<article>
+  <div class="col">
+    <ul class="intro-note"><li>This article draws on academic research, reports from research institutes and management consultancies, and the author's observations from delivering training projects with organizations. Names and personal details have been changed.</li><li>Sources are numbered and listed at the end of the article.</li><li>AI tools were used for data synthesis, editing and publishing.</li></ul>
+<p>According to Gallup's <em>State of the Global Workplace 2026</em> report, only 9% of employees in Vietnam are engaged at work, well below Southeast Asia (25%) and the global average (20%). What stands out is that Vietnamese employees also report less stress than their peers (13%, against 25% across the region), and 78% say now is a good time to find a new job <sup><a href="#ref-1">[1]</a></sup>. Not under much pressure, not particularly attached, and ready to leave when an opportunity comes along.</p>
+<p>On the employer side, the picture is no easier. ManpowerGroup's Employment Outlook Survey for Q4 2026 found that about half of employers in Vietnam say talent shortages are slowing their hiring, and 43% see a gap between candidates' expectations and job requirements. Among employers reducing headcount, 52% cite automation, twice the regional average <sup><a href="#ref-2">[2]</a></sup>. When hiring from outside is both difficult and costly, and the people already inside can easily walk away, developing the existing workforce becomes a strategic choice rather than a perk.</p>
+<p>L&amp;D matters. But for L&amp;D to deliver results and prove its value, in-house learning teams face several big challenges that still lack good answers.</p>
+<p>Drawing on my experience and on conversations with HR and learning teams at organizations operating in Vietnam, my fellow training consultants and I have distilled three challenges that come up again and again:</p>
+
+<h2>1. The biggest challenge: where does the money come from?</h2>
+<p>The last months of the year are usually when the learning roadmap and training plan for the coming year take shape. L&amp;D has a long list of things to update, build, present and defend in order to clarify what the company needs to solve next year: the development needs of each function, which priorities are tied to business goals, how much budget is required, and what training actually delivered over the past year.</p>
+<p>During this period, my colleagues and I also noticed that conversations between a consulting firm and its clients feel different from the rest of the year. Organizations open up more. They share their business problems in more detail, the vision of senior leadership, new forecasts and strategies, and above all their concerns about what the L&amp;D plan should look like in light of all of that, and how to secure the budget it needs for the coming year. Time is not on the learning team's side either, because planning is followed by rounds of presenting, explaining, gathering feedback and adjusting before next year's budget is locked in.</p>
+<p>Globally, budget season is rarely relaxed. ATD's <em>2026 State of the Industry</em> report shows that average learning expenditure fell to US$846 per employee in 2025, down sharply from US$1,254 the year before, while formal learning hours rose from 13.7 to 16.7 per employee. The outlook is not much brighter: only 28% of organizations expect their training budget to grow (down from 48% a year earlier), and 25% expect cuts <sup><a href="#ref-3">[3]</a></sup>. Doing more with less is a reality well beyond Vietnam.</p>
+<p>Even so, training budgets still have a place when they address leaders' real concerns. CIPD's 2026 survey in the UK found that 48% of employers had increased investment in developing existing staff over the past year, just as 53% were struggling to recruit suitable candidates <sup><a href="#ref-4">[4]</a></sup>. That context is quite close to what the ManpowerGroup survey found in Vietnam.</p>
+
+<h2>2. Proving that training works</h2>
+<p>The second challenge follows closely from the first: to get budget approved, L&amp;D has to show that training works. And this is where many organizations are still unsure. According to ATD, fewer than 25% of organizations measure how well their learning programs align with organizational goals, and even fewer measure ROI <sup><a href="#ref-3">[3]</a></sup>. Leaders notice this too: CIPD reports that the share of leaders who recognize L&amp;D's impact fell from 81% in 2021 to 67% in 2023 <sup><a href="#ref-5">[5]</a></sup>. Gartner, for its part, found that many organizations have overhauled their programs and increased spending on leader development, but “they are not seeing results” <sup><a href="#ref-6">[6]</a></sup>.</p>
+<p>In practice, most programs still stop at end-of-course satisfaction surveys and knowledge tests <sup><a href="#ref-7">[7]</a></sup>. Both are easy to run and necessary, but neither answers the question leaders care about most: after the course, do people work differently, and does that produce results?</p>
+<p>In most of my meetings with client representatives about training evaluation, both sides used Kirkpatrick's four levels as the common frame of reference. In my view, though, the model works better as a reference point than as the backbone of an impact evaluation plan. In <a class="xref" href="measuring-training-effectiveness-tna-kirkpatrick-ltem.html">the next article</a>, I propose LTEM instead, a more specific and more visual approach, combined with training needs analysis.</p>
+
+<h2>3. Workload</h2>
+<p>The third challenge is workload: L&amp;D carries many tasks outside its core expertise, such as administration and paperwork, reporting, course communications, scheduling, learner support, and even managing internal events. These are what I call “3N” tasks, from the Vietnamese <em>nhỏ nhưng nhiều</em>: small but many.</p>
+<p>ATD identifies the top two challenges for learning teams today as balancing multiple priorities at once (46%) and scaling with fewer resources (33%) <sup><a href="#ref-3">[3]</a></sup>. Set against the figures above, with budgets falling while learning hours rise, it is easy to picture many L&amp;D teams delivering more with the same resources, or even fewer. When a team is swept up in operations, the most time-consuming work tends to slip: diagnosing needs properly, designing programs, and following up after training.</p>
+<p>On the learner side, PwC's <em>Hopes and Fears 2026</em> survey of nearly 50,000 workers in 48 countries and territories found that the share of workers with access to learning resources fell from 59% to 51% <sup><a href="#ref-8">[8]</a></sup>.</p>
+<p>Interestingly, amid the whirlwind of artificial intelligence, AI agents, and GenAI before them, were expected to lighten the workload, yet they have instead created new problems that sit beyond the team's reach.</p>
+
+<h2>Three challenges in one spiral</h2>
+<p>The hardest part is not solving each challenge on its own, but solving all three at the SAME TIME, OVER AND OVER, while they remain closely CONNECTED. Training needs budget, but a budget proposal has to be backed by evidence of effectiveness (never an easy task), while L&amp;D still has a steady stream of daily and weekly tasks to keep the function's plans running smoothly. That is why the response needs to be holistic, rather than concentrating resources on a single problem.</p>
+
+<h2>Shifting from delivering courses to solving business problems</h2>
+<p>Most training requests reach L&amp;D as a specific ask: a department needs a course on skill X for group Y next quarter. L&amp;D takes the request, sources content or a provider, schedules it and delivers. This way of working is necessary and often effective. But when everything starts from a course that has already been chosen, L&amp;D struggles to answer the question “what did the training achieve?”, and has little voice when budgets come under review. Some organizations treat L&amp;D as a unit that receives and processes requests, rather than as a partner that helps departments solve their people challenges.</p>
+<p>My own view: the greatest impact may not come from output metrics (number of sessions, learner ratings, year-end completion targets and so on), but from three things: defining the overall problem; management capability; and communicating and selling solutions.</p>
+<p>The idea is not new. More than two decades ago, Dana Gaines Robinson proposed an approach called <em>performance consulting</em>: a strategic process that produces business results by improving the performance of people in the organization. She argued that L&amp;D professionals must be “a businessperson first” <sup><a href="#ref-9">[9]</a></sup>. Before choosing a solution, L&amp;D needs to clarify and align four types of needs:</p>
+<ul>
+<li><strong>Business results</strong> the organization needs to achieve.</li>
+<li><strong>Performance requirements</strong>, meaning what people need to do differently on the job.</li>
+<li><strong>Individual solutions</strong>, of which training is only one option.</li>
+<li><strong>Organizational capability and conditions</strong>: whether processes, tools and systems support or hinder the new behavior.</li>
+</ul>
+<p>According to Robinson, if L&amp;D cannot link what it does to what the organization needs to accomplish, it becomes “irrelevant” <sup><a href="#ref-9">[9]</a></sup>.</p>
+<p>From this angle, L&amp;D's role shifts in several ways:</p>
+<ul>
+<li>Communication and expectation management: L&amp;D as a strategic partner rather than an administrative and operational function. The first thing that needs to change is how everyone who works with L&amp;D sees it.</li>
+<li>Outsourcing to external providers should not be the answer to everything, but providers remain allies and a source of expertise that cannot be ignored.</li>
+<li>L&amp;D as internal solution sellers, persuading through the value a solution brings to the organization rather than simply asking for more budget.</li>
+</ul>
+<p>Here is a real example from a project I worked on as an external consultant. Department heads requested a program to help middle managers “manage their people more effectively”. During the training needs analysis (TNA), we (the consulting firm, HR and the in-house learning team) uncovered a mismatch in how the role was understood: many managers believed that coaching and developing staff was mainly the job of HR and L&amp;D, while their own job was to use those people to deliver results. Yet coaching, developing and evaluating staff are part of a line manager's own role, not HR's. So the first step was to realign on the brief: from “help managers manage their people effectively” to “help managers shift their mindset and understand what a manager is and does”. A management skills course, however good, will struggle to create change if participants do not yet see that work as theirs. And getting all parties aligned on this new understanding took considerably more time than delivering the training itself.</p>
+
+<h2>The cost of this path</h2>
+<p>Starting from the business problem sounds sensible, but it is not easier, and at times it tests L&amp;D's capabilities more than ever. L&amp;D teams will face at least three challenges.</p>
+<p><strong>It demands more capability.</strong> Beyond learning expertise, L&amp;D needs to understand the business model, ask diagnostic questions, work with data and present to leaders. Robinson describes the relationship between L&amp;D and managers as a three-legged stool: access, credibility and trust <sup><a href="#ref-9">[9]</a></sup>. All three take time to build.</p>
+<p><strong>It is not easy to speak up.</strong> When leaders' confidence in L&amp;D's impact is declining <sup><a href="#ref-5">[5]</a></sup>, a proposal to “let us understand the problem before we run a course” can be seen as stalling or avoiding responsibility.</p>
+<p><strong>The 3N tasks do not disappear.</strong> A new mindset does not reduce the paperwork, reports or sessions that need coordinating. Without a way to streamline operations, time for diagnosis and measurement will still be crowded out, as described in the third challenge.</p>
+
+<h2>What it takes to go the distance</h2>
+<p>A partner role cannot come from L&amp;D's efforts alone. It needs certain conditions on the organization's side, and in return, L&amp;D needs to bring matching capabilities.</p>
+<p><strong>On the organization's side</strong>, the most important condition may be how leaders see learning: as a cost to cut when times are hard, or <strong>as part of the people strategy</strong>. Next comes the learning culture within the workforce itself. CIPD notes that only 8% of L&amp;D teams prioritize helping learners apply what they have learned on the job <sup><a href="#ref-5">[5]</a></sup>. And finally, resources: not only money, but also people and time for L&amp;D to do the diagnostic and follow-up work.</p>
+<p><strong>On L&amp;D's side</strong>, it means speaking in terms of business results, patiently building credibility one small project at a time, and being ready to propose non-training solutions when the problem is not about skills.</p>
+
+<h2>Three challenges, three ways forward</h2>
+<p>If a partnership mindset is the common foundation, each challenge still needs its own tools. The next articles in this series take them one by one:</p>
+<ul>
+<li><strong>Proving that training works:</strong> <a class="xref" href="measuring-training-effectiveness-tna-kirkpatrick-ltem.html">start by identifying the right needs (TNA), then choose a suitable evaluation model such as Kirkpatrick or LTEM</a>. <a class="xref" href="best-performer-not-always-best-manager.html">A separate article looks at competency frameworks</a> as a tool that supports both steps, with a concrete example for middle managers.</li>
+<li><strong>Budget:</strong> balancing learning modalities between effectiveness and cost, where cost means not only money but also time, people and opportunity cost.</li>
+<li><strong>3N workload:</strong> streamlining operations through AI and internal communication.</li>
+</ul>
+
+    <nav class="series" aria-label="Series">
+      <div class="series-title">Series: Three challenges for L&amp;D</div>
+      <ol><li class="cur"><span>When L&amp;D is about more than training and developing people</span> <em>(you are here)</em></li><li><a href="measuring-training-effectiveness-tna-kirkpatrick-ltem.html">Measuring training effectiveness: from needs analysis to Kirkpatrick and LTEM</a></li><li><a href="best-performer-not-always-best-manager.html">The best performer isn't always the best manager</a></li></ol>
+    </nav>
+    <div class="refs">
+      <h2>References</h2>
+      <ol>
+<li id="ref-1">The Investor (2026, July 21). Vietnamese workers report low stress but weak engagement: survey (Gallup <em>State of the Global Workplace 2026</em> data). <a href="https://theinvestor.vn/vietnamese-workers-report-low-stress-but-weak-engagement-survey-d19587.html" target="_blank" rel="noopener">theinvestor.vn</a></li>
+<li id="ref-2">Nhân Dân (2026, September 10). Triển vọng tuyển dụng của Việt Nam sẽ tăng mạnh về quy mô nhân sự trong quý IV/2026 [Vietnam's hiring outlook to rise strongly in Q4 2026] (ManpowerGroup Employment Outlook Survey data). In Vietnamese. <a href="https://nhandan.vn/trien-vong-tuyen-dung-cua-viet-nam-se-tang-manh-ve-quy-mo-nhan-su-trong-quy-iv2026-post987497.html" target="_blank" rel="noopener">nhandan.vn</a></li>
+<li id="ref-3">Guiv, T. (2026, May 11). Highlights From ATD's 2026 State of the Industry Report. ATD. <a href="https://www.td.org/content/atd-blog/highlights-from-atd-s-2026-state-of-the-industry-report" target="_blank" rel="noopener">td.org</a></li>
+<li id="ref-4">CIPD (2026, September 22). Employers turn to upskilling as labour market cools and costs rise. <a href="https://www.cipd.org/uk/about/news/employers-upskilling-labour-market-cools-costs-rise/" target="_blank" rel="noopener">cipd.org</a></li>
+<li id="ref-5">Lancaster, A. (2024, December 3). How L&amp;D can create value: Focusing on social collaborative learning. CIPD. <a href="https://www.cipd.org/en/views-and-insights/thought-leadership/insight/learning-value-social-collaborative/" target="_blank" rel="noopener">cipd.org</a></li>
+<li id="ref-6">Gartner (2024, October 15). Gartner Survey Finds Leader and Manager Development Tops HR Leaders' List of 2025 Priorities for Third Consecutive Year. <a href="https://www.gartner.com/en/newsroom/press-releases/2024-10-15-gartner-survey-finds-leader-and-manager-development-tops-hrleaders-list" target="_blank" rel="noopener">gartner.com</a></li>
+<li id="ref-7">Thalheimer, W. (2024). The Learning-Transfer Evaluation Model (LTEM), v13. Work-Learning Research. <a href="https://www.worklearning.com/ltem/" target="_blank" rel="noopener">worklearning.com</a></li>
+<li id="ref-8">PwC (2026). Global Workforce Hopes and Fears Survey 2026. <a href="https://www.pwc.com/gx/en/1/issues/workforce/hopes-and-fears.html" target="_blank" rel="noopener">pwc.com</a></li>
+<li id="ref-9">Weiss, R. P. (2015, May 8). Performance Consulting: A Classic Revisited (interview with Dana Gaines Robinson). ATD. <a href="https://www.td.org/insights/performance-consulting-a-classic-revisited" target="_blank" rel="noopener">td.org</a></li>
+
+      </ol>
+    </div>
+    <div class="back-wrap"><a href="../../index.html#articles" class="btn-back">← Back to home</a></div>
+  </div>
+</article>
+<section class="author">
+  <div class="col">
+    <strong>Hua Minh Quan</strong>
+    <p>Learning &amp; Development, Ho Chi Minh City. Engineer by training, with years in education and corporate training consulting.</p>
+    <div class="links">
+      <a href="../../index.html">Home</a>
+      <a href="https://www.linkedin.com/in/huaminhquan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:minhquan.hua.bio@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+<footer><div class="col">© 2026 Hua Minh Quan</div></footer>
+</body>
+</html>

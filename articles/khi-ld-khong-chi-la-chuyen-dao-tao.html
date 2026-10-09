@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khi L&amp;D không chỉ là câu chuyện về đào tạo và phát triển con người — Hua Minh Quan</title>
+<meta name="description" content="Ba bài toán L&D phải giải cùng lúc: ngân sách, đo lường hiệu quả và khối lượng việc, và vì sao lời giải bắt đầu từ bài toán của doanh nghiệp.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Khi L&amp;D không chỉ là câu chuyện về đào tạo và phát triển con người">
+<meta property="og:description" content="Ba bài toán L&D phải giải cùng lúc: ngân sách, đo lường hiệu quả và khối lượng việc, và vì sao lời giải bắt đầu từ bài toán của doanh nghiệp.">
+<link rel="alternate" hreflang="en" href="en/beyond-training-three-ld-challenges.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #0F1E3A; --navy-800: #16284B; --navy-700: #1F3A68; --navy-100: #E6ECF5;
+    --ink: #1A2233; --muted: #5B6475; --line: #DCE1E8; --paper: #FFFFFF; --paper-alt: #F5F7FA;
+    --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.75; font-size: 17px; }
+  a { color: var(--navy-700); }
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy-900); text-decoration: none; white-space: nowrap; }
+  .nav-right { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+  .lang-switch { font-size: 0.82rem; font-weight: 600; color: var(--muted); display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+  .lang-switch a { color: var(--muted); text-decoration: none; }
+  .lang-switch a:hover { color: var(--navy-700); }
+  .lang-switch .on { color: var(--navy-900); border-bottom: 2px solid var(--navy-700); }
+  .lang-switch .sep { color: var(--line); }
+  .btn-home { font-size: 0.85rem; font-weight: 600; color: var(--navy-800); text-decoration: none; border: 1px solid var(--navy-800); padding: 6px 12px; border-radius: 4px; white-space: nowrap; }
+  .btn-home:hover { background: var(--navy-800); color: #fff; }
+  .article-hero { background: var(--navy-900); color: #fff; padding: 80px 0 64px; }
+  .col { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9FB3D6; font-weight: 600; }
+  .article-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4.6vw, 2.8rem); line-height: 1.2; margin: 16px 0 16px; }
+  .article-hero .sub { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: #C9D3E4; }
+  .meta { margin-top: 28px; font-size: 0.85rem; color: #9FB3D6; }
+  article { padding: 48px 0 40px; }
+  .intro-note { list-style: none; font-size: 0.88rem; color: var(--muted); font-style: italic; border-left: 2px solid var(--line); padding-left: 16px; margin: 0 0 36px 0 !important; }
+  .intro-note li { margin-bottom: 4px !important; }
+  article h2 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; color: var(--navy-900); line-height: 1.3; margin: 48px 0 18px; }
+  article h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--navy-800); margin: 34px 0 12px; }
+  article p { margin-bottom: 18px; }
+  article ul, article ol { margin: 0 0 20px 22px; }
+  article li { margin-bottom: 8px; }
+  article strong { color: var(--navy-900); }
+  .xref { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 500; }
+  .pull { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--navy-800); border-left: 3px solid var(--navy-700); padding: 4px 0 4px 20px; margin: 28px 0; }
+  sup a { text-decoration: none; font-size: 0.78em; font-weight: 600; }
+  .table-wrap { overflow-x: auto; margin: 24px 0 28px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.9rem; line-height: 1.55; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy-800); color: #fff; font-weight: 600; font-size: 0.82rem; }
+  tr:nth-child(even) td { background: var(--paper-alt); }
+  td:first-child { font-weight: 600; color: var(--navy-900); width: 22%; }
+  .fig { margin: 28px 0 32px; }
+  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fig-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+  .fig figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+  .series { margin-top: 56px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 4px; padding: 22px 24px; }
+  .series-title { font-family: var(--serif); font-weight: 600; color: var(--navy-900); font-size: 1.1rem; margin-bottom: 10px; }
+  .series ol { margin: 0 0 0 20px !important; font-size: 0.95rem; }
+  .series li { margin-bottom: 6px; }
+  .series li.cur span { font-weight: 600; color: var(--navy-900); }
+  .series li.cur em { color: var(--muted); font-size: 0.85em; }
+  .refs { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 12px; }
+  .refs ol { font-size: 0.86rem; color: var(--muted); line-height: 1.6; margin-left: 20px; }
+  .refs li { margin-bottom: 12px; word-break: break-word; }
+  .refs li:target { background: var(--navy-100); }
+  .back-wrap { margin-top: 40px; }
+  .btn-back { display: inline-block; background: var(--navy-800); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.92rem; padding: 12px 20px; border-radius: 4px; }
+  .btn-back:hover { background: var(--navy-700); }
+  .author { background: var(--paper-alt); padding: 48px 0; margin-top: 40px; }
+  .author p { font-size: 0.95rem; color: var(--muted); }
+  .author strong { color: var(--navy-900); font-family: var(--serif); font-size: 1.1rem; display: block; margin-bottom: 6px; }
+  .author .links { margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; }
+  footer { background: var(--navy-900); color: #8A9AB8; font-size: 0.82rem; padding: 26px 0; }
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .nav, .col { padding: 0 16px; }
+    .brand { font-size: 1.05rem; }
+    .nav-right { gap: 10px; }
+    .btn-home { padding: 5px 9px; font-size: 0.8rem; }
+    .article-hero { padding: 56px 0 44px; }
+    .fig-svg { min-width: 560px; }
+  }
+  @media (max-width: 420px) {
+    .brand { display: none; }
+    .nav { justify-content: space-between; }
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="../index.html#vi" class="brand">Hua Minh Quan</a>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language"><span class="on">Tiếng Việt</span><span class="sep">|</span><a href="en/beyond-training-three-ld-challenges.html">English</a></div>
+      <a href="../index.html#vi" class="btn-home">← Trang chủ</a>
+    </div>
+  </div>
+</header>
+<section class="article-hero">
+  <div class="col">
+    <div class="eyebrow">Loạt bài · Phần 1 · Góc nhìn</div>
+    <h1>Khi L&amp;D không chỉ là câu chuyện về đào tạo và phát triển con người</h1>
+    <p class="sub">03 bài toán lớn để L&amp;D trở thành đối tác nội bộ trên con đường phát triển tổ chức.</p>
+    <div class="meta">Hua Minh Quan · Tháng 10, 2026 · 11 phút đọc</div>
+  </div>
+</section>
+<article>
+  <div class="col">
+    <ul class="intro-note"><li>Bài viết tổng hợp từ các nghiên cứu học thuật, báo cáo của các tổ chức nghiên cứu, tư vấn quản trị và quan sát của người viết trong quá trình triển khai dự án đào tạo cùng doanh nghiệp. Tên và chi tiết nhân vật đã được thay đổi.</li><li>Nguồn tham khảo được đánh số và liệt kê ở cuối bài.</li><li>Bài viết có sử dụng công cụ AI cho mục đích tổng hợp dữ liệu, hiệu đính và xuất bản.</li></ul>
+<p>Theo báo cáo <em>State of the Global Workplace 2026</em> của Gallup, chỉ 9% người lao động Việt Nam gắn kết với công việc, thấp hơn nhiều so với mức 25% của Đông Nam Á và 20% của toàn cầu. Điều đáng chú ý là người lao động Việt Nam lại ít căng thẳng hơn mặt bằng chung (13%, so với 25% của khu vực), và 78% cho rằng đây là thời điểm tốt để tìm việc mới <sup><a href="#ref-1">[1]</a></sup>. Không quá áp lực, cũng không quá gắn bó, và sẵn sàng rời đi khi có cơ hội.</p>
+<p>Ở phía doanh nghiệp, bức tranh cũng không dễ hơn. Khảo sát triển vọng việc làm quý IV/2026 của ManpowerGroup ghi nhận khoảng một nửa doanh nghiệp tại Việt Nam cho biết thiếu hụt nhân tài đang làm chậm tuyển dụng, và 43% thấy khoảng cách giữa kỳ vọng của ứng viên với yêu cầu công việc. Trong nhóm doanh nghiệp cắt giảm nhân sự, 52% nêu lý do là tự động hóa, gấp đôi mức trung bình của khu vực <sup><a href="#ref-2">[2]</a></sup>. Khi tuyển từ bên ngoài vừa khó vừa tốn kém, còn người bên trong thì dễ rời đi, phát triển đội ngũ hiện có trở thành một lựa chọn chiến lược của doanh nghiệp, thay vì một khoản phúc lợi.</p>
+<p>L&amp;D cần thiết, nhưng để L&amp;D thực sự tạo ra kết quả và chứng minh được giá trị, đội ngũ làm công tác đào tạo nội bộ cũng có không ít bài toán lớn đang tìm lời giải hợp lý.</p>
+<p>Từ trải nghiệm, kinh nghiệm trao đổi cùng với phòng nhân sự và riêng đội ngũ đào tạo tại các doanh nghiệp đang hoạt động tại Việt Nam, tôi và các đồng sự trong đội ngũ training consultant tự đúc rút góc nhìn riêng với 03 bài toán lớn và phổ biến như sau:</p>
+
+<h2>1. Bài toán lớn nhất: Đầu tiên là tiền đâu</h2>
+<p>Thông thường giai đoạn các tháng cuối năm là thời điểm quan trọng để xây dựng lộ trình, kế hoạch đào tạo cho năm tiếp theo. L&amp;D có một loạt các nội dung cần cập nhật, xây dựng, trình bày, phản biện để làm rõ năm sau có nhu cầu gì công ty cần giải: nhu cầu phát triển của từng khối, ưu tiên nào gắn với mục tiêu kinh doanh, ngân sách cần bao nhiêu, và năm vừa qua đào tạo đã mang lại được gì.</p>
+<p>Trong giai đoạn này, tôi và đồng sự cũng nhận ra cách trao đổi nhu cầu giữa đơn vị tư vấn và doanh nghiệp cũng khác hơn các giai đoạn còn lại trong năm. Doanh nghiệp có dịp “mở lòng” nhiều hơn khi chia sẻ cụ thể hơn về bài toán của doanh nghiệp, tầm nhìn của cấp lãnh đạo trên thượng tầng, những dự báo và chiến lược mới được tung ra, và nhiều nhất là những trăn trở về kế hoạch L&amp;D sẽ như thế nào sau khi cân nhắc tất thảy những thông tin đó, và đảm bảo được khoản ngân sách cần thiết cho năm tới. Thời gian lập kế hoạch cũng không đứng về team đào tạo, vì sau đó còn là giai đoạn dành cho trình bày, giải thích, thu nhận ý kiến và điều chỉnh kịp thời trước khi ngân sách của năm tới được chốt cứng.</p>
+<p>Ở quy mô toàn cầu, mùa ngân sách hàng năm khó có thể gọi là dễ thở. Báo cáo <em>State of the Industry 2026</em> của ATD cho thấy chi tiêu cho học tập bình quân năm 2025 chỉ còn 846 USD/nhân viên, giảm mạnh so với 1.254 USD năm trước đó, trong khi số giờ học chính thức lại tăng từ 13,7 lên 16,7 giờ/người. Triển vọng cũng chưa sáng hơn: chỉ 28% tổ chức kỳ vọng ngân sách đào tạo tăng (năm trước là 48%), còn 25% dự kiến bị cắt giảm <sup><a href="#ref-3">[3]</a></sup>. Làm nhiều hơn với ít tiền hơn đang là thực tế không riêng ở Việt Nam.</p>
+<p>Dù vậy, ngân sách đào tạo vẫn có chỗ đứng khi nó trả lời đúng nỗi lo của lãnh đạo. Khảo sát năm 2026 của CIPD tại Anh cho thấy 48% nhà tuyển dụng đã tăng đầu tư phát triển nhân viên hiện có trong năm qua, đúng vào lúc 53% doanh nghiệp gặp khó khi tuyển ứng viên phù hợp <sup><a href="#ref-4">[4]</a></sup>. Bối cảnh này khá gần với những gì khảo sát ManpowerGroup ghi nhận tại Việt Nam.</p>
+
+<h2>2. Bài toán về hiệu quả sau đào tạo</h2>
+<p>Bài toán thứ hai bám sát bài toán thứ nhất: muốn được duyệt ngân sách, L&amp;D cần chứng minh đào tạo có tác dụng. Đây lại là khâu nhiều tổ chức còn băn khoăn. Theo ATD, dưới 25% tổ chức đo được mức độ gắn kết giữa chương trình đào tạo với mục tiêu tổ chức, và số tổ chức đo ROI còn ít hơn <sup><a href="#ref-3">[3]</a></sup>. Phía lãnh đạo cũng cảm nhận điều đó: theo CIPD, tỷ lệ lãnh đạo ghi nhận được tác động của L&amp;D giảm từ 81% năm 2021 xuống 67% năm 2023 <sup><a href="#ref-5">[5]</a></sup>. Gartner thì ghi nhận nhiều tổ chức đã cải tổ chương trình và tăng chi cho phát triển lãnh đạo, nhưng “they are not seeing results” <sup><a href="#ref-6">[6]</a></sup>.</p>
+<p>Trong thực tế, phần lớn chương trình vẫn dừng lại ở phiếu khảo sát mức độ hài lòng và bài kiểm tra kiến thức cuối khóa <sup><a href="#ref-7">[7]</a></sup>. Hai công cụ này dễ làm và cần thiết, nhưng chưa trả lời được câu hỏi lãnh đạo quan tâm nhất: sau khóa học, người ta có làm việc khác đi không, và điều đó có tạo ra kết quả không.</p>
+<p>Phần lớn các meeting bàn về đánh giá hiệu quả sau đào tạo giữa tôi và đại diện phía doanh nghiệp, cả hai sẽ dùng thang đo 4 cấp độ của Kirkpatrick để làm cơ sở trao đổi. Tuy nhiên, theo góc nhìn chủ quan của tôi, mô hình này cũng mang giá trị tham chiếu hơn là thực sự làm xương sống cho việc xây dựng phương án đánh giá tác động. Thay vào đó, tôi đề xuất LTEM - cách tiếp cận cụ thể hơn và trực quan hơn, kết hợp với việc phân tích nhu cầu đào tạo, trong <a class="xref" href="do-luong-hieu-qua-dao-tao-tna-kirkpatrick-ltem.html">bài tiếp theo</a>.</p>
+
+<h2>3. Bài toán về khối lượng công việc</h2>
+<p>Bài toán về khối lượng công việc - khi L&amp;D có quá nhiều đầu việc ngoài chuyên môn, như các thủ tục hành chính - chứng từ, báo cáo, truyền thông khóa học, điều phối khóa học, hỗ trợ học viên, thậm chí là quản lý sự kiện nội bộ nữa. Đó là các tác vụ 3N - “Nhỏ Nhưng Nhiều”.</p>
+<p>ATD ghi nhận hai thách thức hàng đầu của các đội học tập hiện nay là cân đối nhiều ưu tiên cùng lúc (46%) và mở rộng quy mô với ít nguồn lực hơn (33%) <sup><a href="#ref-3">[3]</a></sup>. Đặt cạnh số liệu ngân sách giảm nhưng giờ học tăng ở trên, có thể hình dung nhiều đội L&amp;D đang phải tổ chức nhiều hơn với cùng một nguồn lực, thậm chí ít hơn. Khi bị cuốn vào phần vận hành, những việc cần nhiều thời gian nhất thường bị lùi lại: chẩn đoán đúng nhu cầu, thiết kế chương trình, và theo dõi sau đào tạo.</p>
+<p>Ở phía người học, khảo sát <em>Hopes and Fears 2026</em> của PwC với gần 50.000 người lao động tại 48 quốc gia, vùng lãnh thổ ghi nhận tỷ lệ người được tiếp cận nguồn lực học tập giảm từ 59% xuống 51% <sup><a href="#ref-8">[8]</a></sup>.</p>
+<p>Một điều thú vị là trong cơn lốc của trí tuệ nhân tạo, các AI Agent và trước đó là GenAI được kỳ vọng sẽ giảm tải khối lượng công việc, nhưng ngược lại làm phát sinh các vấn đề khác vốn nằm ngoài tầm với của đội ngũ.</p>
+
+<h2>Ba bài toán trong cùng một vòng xoắn</h2>
+<p>Thử thách lớn nhất không phải giải từng bài khó, mà phải giải cả 03 bài khó gần như CÙNG LÚC và LIÊN TỤC lặp lại, và chúng còn có LIÊN HỆ mật thiết với nhau. Làm đào tạo sẽ cần ngân sách, nhưng đề xuất ngân sách sẽ cần thuyết phục bằng con số đo lường tính hiệu quả (việc này chưa bao giờ là nhiệm vụ dễ dàng), trong khi L&amp;D hàng ngày, hàng tuần vẫn cần xử lý khá nhiều đầu việc để đảm bảo các kế hoạch của phòng ban được vận hành trơn tru. Vì vậy cách tiếp cận giải pháp cũng cần sự tổng thể thay vì tập trung nguồn lực vào 1 vấn đề duy nhất.</p>
+
+<h2>Chuyển cách tiếp cận sang giải quyết bài toán của doanh nghiệp, thay vì tập trung triển khai khóa học</h2>
+<p>Phần lớn yêu cầu đào tạo đến với L&amp;D dưới dạng một đề nghị cụ thể: một phòng ban cần mở lớp kỹ năng X cho nhóm Y trong quý tới. L&amp;D tiếp nhận, tìm nội dung hoặc đối tác, lên lịch và triển khai. Cách làm này cần thiết và nhiều khi hiệu quả. Nhưng khi toàn bộ công việc bắt đầu từ một khóa học đã được chọn sẵn, L&amp;D khó trả lời câu hỏi "đào tạo xong thì được gì", và cũng khó có tiếng nói khi ngân sách bị xem xét lại. Một số tổ chức xem L&amp;D như đơn vị tiếp nhận và xử lý yêu cầu, hơn là một đối tác giúp các phòng ban giải quyết bài toán nhân sự.</p>
+<p>Theo góc nhìn chủ quan: Giải pháp tác động lớn nhất có thể không nằm ở hiệu suất (số lượng lớp, rating học viên, chỉ tiêu hoàn thành cuối năm,...) mà nằm ở 03 khía cạnh: xác định bài toán tổng thể; năng lực quản trị; truyền thông và bán giải pháp.</p>
+<p>Ý tưởng này không mới. Từ hơn hai thập kỷ trước, Dana Gaines Robinson đã đề xuất cách làm gọi là <em>performance consulting</em>: một quy trình chiến lược nhằm tạo ra kết quả kinh doanh thông qua việc nâng cao hiệu suất của con người trong tổ chức. Bà cho rằng người làm L&amp;D trước hết phải là “a businessperson first” <sup><a href="#ref-9">[9]</a></sup>. Trước khi chọn giải pháp, người làm L&amp;D cần làm rõ và căn chỉnh bốn loại nhu cầu:</p>
+<ul>
+<li><strong>Kết quả kinh doanh</strong> mà tổ chức cần đạt.</li>
+<li><strong>Yêu cầu về hiệu suất</strong>, tức con người cần làm gì khác đi trong công việc.</li>
+<li><strong>Giải pháp cho cá nhân</strong>, trong đó đào tạo chỉ là một lựa chọn.</li>
+<li><strong>Năng lực và điều kiện của tổ chức</strong>: quy trình, công cụ, cơ chế có đang hỗ trợ hay cản trở hành vi mới.</li>
+</ul>
+<p>Theo Robinson, nếu không nối được việc mình làm với điều tổ chức cần đạt được, L&amp;D sẽ trở nên “irrelevant” <sup><a href="#ref-9">[9]</a></sup>.</p>
+<p>Từ góc độ này, vai trò của L&amp;D thay đổi theo vài hướng:</p>
+<ul>
+<li>Truyền thông và quản trị kỳ vọng: L&amp;D là một strategic partner thay vì chức năng hành chính và vận hành. Tư duy và cách nhìn là điều cần thay đổi đầu tiên của các bên khi làm việc với L&amp;D.</li>
+<li>Outsource từ đơn vị bên ngoài không nên là giải pháp cho tất cả, nhưng vẫn là đồng minh và nguồn lực về chuyên môn không thể bỏ qua.</li>
+<li>L&amp;D là những người bán giải pháp nội bộ, thuyết phục bằng giá trị mà giải pháp mang lại cho tổ chức, thay vì chỉ đề xuất xin thêm ngân sách.</li>
+</ul>
+<p>Một ví dụ thực tế mà tôi từng tham gia với vai trò đại diện đơn vị tư vấn bên ngoài: trưởng các phòng ban đề xuất một chương trình đào tạo giúp đội ngũ quản lý cấp trung “quản lý nhân viên hiệu quả hơn”. Khi phân tích nhu cầu đào tạo (TNA), chúng tôi (đơn vị tư vấn, phòng nhân sự và đội ngũ đào tạo) phát hiện một khoảng vênh trong cách hiểu về vai trò: nhiều quản lý cho rằng việc huấn luyện, phát triển năng lực nhân viên là trách nhiệm chính của HR và L&amp;D, còn phần việc của họ là sử dụng nguồn nhân lực đó để đạt kết quả. Trong khi đó, kèm cặp, huấn luyện và đánh giá nhân viên vốn là một phần vai trò của chính người quản lý trực tiếp, chứ không phải của HR. Vì vậy tiên quyết cần làm là thống nhất lại đề bài: thay vì “giúp quản lý quản lý nhân viên hiệu quả” thành “giúp quản lý thay đổi tư duy, hiểu rõ chân dung và vai trò của một người quản lý”. Một khóa kỹ năng quản lý, dù tốt đến đâu, cũng khó tạo ra thay đổi nếu người học chưa nhận đó là việc của mình. Và thời gian để các bên thông suốt và đồng thuận với cách hiểu mới chiếm nhiều thời gian đáng kể so với việc triển khai chương trình đào tạo.</p>
+
+<h2>Cái giá của con đường này</h2>
+<p>Đi từ bài toán của doanh nghiệp nghe hợp lý, nhưng không dễ mà đôi khi thử thách năng lực của L&amp;D hơn bao giờ hết. Ít nhất có ba thách thức mà đội L&amp;D sẽ gặp.</p>
+<p><strong>Đòi hỏi nhiều năng lực hơn.</strong> Ngoài chuyên môn về học tập, L&amp;D cần hiểu mô hình kinh doanh, biết đặt câu hỏi để chẩn đoán, biết dùng dữ liệu và trình bày với lãnh đạo. Robinson mô tả quan hệ giữa L&amp;D và các nhà quản lý như một chiếc ghế ba chân: được quyền tiếp cận (access), có uy tín chuyên môn (credibility) và được tin tưởng (trust) <sup><a href="#ref-9">[9]</a></sup>. Cả ba đều cần thời gian để xây.</p>
+<p><strong>Không dễ để lên tiếng.</strong> Khi niềm tin của lãnh đạo vào tác động của L&amp;D giảm <sup><a href="#ref-5">[5]</a></sup>, đề xuất "hãy để chúng tôi tìm hiểu bài toán trước khi mở lớp" có thể bị xem là trì hoãn và né tránh trách nhiệm.</p>
+<p><strong>Việc 3N không tự biến mất.</strong> Đổi tư duy không làm giảm số chứng từ, báo cáo hay lớp học cần điều phối. Nếu không có cách tối ưu phần vận hành, thời gian cho chẩn đoán và đo lường vẫn sẽ bị lấn át như đã nói ở bài toán thứ ba.</p>
+
+<h2>Điều kiện để đi đường dài</h2>
+<p>Vai trò đối tác không thể chỉ đến từ nỗ lực của đội L&amp;D. Nó cần một vài điều kiện từ phía tổ chức, và ngược lại, đội L&amp;D cũng cần mang tới những năng lực tương xứng.</p>
+<p><strong>Từ phía tổ chức</strong>, điều kiện quan trọng nhất có lẽ là cách lãnh đạo nhìn việc học: đây là một khoản chi có thể cắt khi khó khăn, hay <strong>đây là một phần của chiến lược con người</strong>. Kế đến là văn hóa học tập trong chính đội ngũ. CIPD ghi nhận chỉ 8% đội L&amp;D ưu tiên việc giúp người học đưa điều đã học vào công việc <sup><a href="#ref-5">[5]</a></sup>. Và cuối cùng là nguồn lực, không chỉ là tiền mà còn là con người và thời gian để đội L&amp;D làm phần việc chẩn đoán và theo dõi.</p>
+<p><strong>Từ phía L&amp;D</strong>, là khả năng nói chuyện bằng kết quả kinh doanh, kiên nhẫn xây uy tín qua từng dự án nhỏ, và sẵn sàng đề xuất giải pháp không phải đào tạo khi bài toán không nằm ở kỹ năng.</p>
+
+<h2>Ba bài toán, ba hướng đi tiếp</h2>
+<p>Nếu tư duy đối tác là nền chung, mỗi bài toán vẫn cần những công cụ riêng. Các bài tiếp theo trong loạt sẽ đi vào từng hướng:</p>
+<ul>
+<li><strong>Hiệu quả sau đào tạo:</strong> <a class="xref" href="do-luong-hieu-qua-dao-tao-tna-kirkpatrick-ltem.html">bắt đầu từ việc xác định đúng nhu cầu (TNA), rồi chọn mô hình đánh giá phù hợp như Kirkpatrick hay LTEM</a>. <a class="xref" href="nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html">Một bài riêng sẽ bàn về khung năng lực</a> như công cụ hỗ trợ cả hai khâu này, với ví dụ cụ thể cho đội ngũ quản lý cấp trung.</li>
+<li><strong>Ngân sách:</strong> cân đối các phương thức học tập giữa hiệu quả và chi phí, trong đó chi phí không chỉ là tiền mà còn là thời gian, con người và chi phí cơ hội.</li>
+<li><strong>Khối lượng việc 3N:</strong> tối ưu vận hành bằng AI và truyền thông nội bộ.</li>
+</ul>
+
+    <nav class="series" aria-label="Series">
+      <div class="series-title">Loạt bài: Ba bài toán của L&amp;D</div>
+      <ol><li class="cur"><span>Khi L&amp;D không chỉ là câu chuyện về đào tạo và phát triển con người</span> <em>(đang đọc)</em></li><li><a href="do-luong-hieu-qua-dao-tao-tna-kirkpatrick-ltem.html">Đo lường hiệu quả đào tạo: từ phân tích nhu cầu đến Kirkpatrick và LTEM</a></li><li><a href="nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html">Người giỏi nhất chưa chắc là quản lý giỏi nhất</a></li></ol>
+    </nav>
+    <div class="refs">
+      <h2>Tài liệu tham khảo</h2>
+      <ol>
+<li id="ref-1">The Investor (2026, 21/7). Vietnamese workers report low stress but weak engagement: survey (dữ liệu Gallup <em>State of the Global Workplace 2026</em>). <a href="https://theinvestor.vn/vietnamese-workers-report-low-stress-but-weak-engagement-survey-d19587.html" target="_blank" rel="noopener">theinvestor.vn</a></li>
+<li id="ref-2">Báo Nhân Dân (2026, 10/9). Triển vọng tuyển dụng của Việt Nam sẽ tăng mạnh về quy mô nhân sự trong quý IV/2026 (dữ liệu ManpowerGroup Employment Outlook Survey). <a href="https://nhandan.vn/trien-vong-tuyen-dung-cua-viet-nam-se-tang-manh-ve-quy-mo-nhan-su-trong-quy-iv2026-post987497.html" target="_blank" rel="noopener">nhandan.vn</a></li>
+<li id="ref-3">Guiv, T. (2026, 11/5). Highlights From ATD's 2026 State of the Industry Report. ATD. <a href="https://www.td.org/content/atd-blog/highlights-from-atd-s-2026-state-of-the-industry-report" target="_blank" rel="noopener">td.org</a></li>
+<li id="ref-4">CIPD (2026, 22/9). Employers turn to upskilling as labour market cools and costs rise. <a href="https://www.cipd.org/uk/about/news/employers-upskilling-labour-market-cools-costs-rise/" target="_blank" rel="noopener">cipd.org</a></li>
+<li id="ref-5">Lancaster, A. (2024, 3/12). How L&amp;D can create value: Focusing on social collaborative learning. CIPD. <a href="https://www.cipd.org/en/views-and-insights/thought-leadership/insight/learning-value-social-collaborative/" target="_blank" rel="noopener">cipd.org</a></li>
+<li id="ref-6">Gartner (2024, 15/10). Gartner Survey Finds Leader and Manager Development Tops HR Leaders' List of 2025 Priorities for Third Consecutive Year. <a href="https://www.gartner.com/en/newsroom/press-releases/2024-10-15-gartner-survey-finds-leader-and-manager-development-tops-hrleaders-list" target="_blank" rel="noopener">gartner.com</a></li>
+<li id="ref-7">Thalheimer, W. (2024). The Learning-Transfer Evaluation Model (LTEM), v13. Work-Learning Research. <a href="https://www.worklearning.com/ltem/" target="_blank" rel="noopener">worklearning.com</a></li>
+<li id="ref-8">PwC (2026). Global Workforce Hopes and Fears Survey 2026. <a href="https://www.pwc.com/gx/en/1/issues/workforce/hopes-and-fears.html" target="_blank" rel="noopener">pwc.com</a></li>
+<li id="ref-9">Weiss, R. P. (2015, 5/8). Performance Consulting: A Classic Revisited (phỏng vấn Dana Gaines Robinson). ATD. <a href="https://www.td.org/insights/performance-consulting-a-classic-revisited" target="_blank" rel="noopener">td.org</a></li>
+
+      </ol>
+    </div>
+    <div class="back-wrap"><a href="../index.html#vi" class="btn-back">← Về trang chủ</a></div>
+  </div>
+</article>
+<section class="author">
+  <div class="col">
+    <strong>Hua Minh Quan</strong>
+    <p>Learning &amp; Development tại TP. Hồ Chí Minh. Nền tảng kỹ sư, nhiều năm trong giáo dục và tư vấn đào tạo doanh nghiệp.</p>
+    <div class="links">
+      <a href="../index.html#vi">Trang chủ</a>
+      <a href="https://www.linkedin.com/in/huaminhquan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:minhquan.hua.bio@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+<footer><div class="col">© 2026 Hua Minh Quan</div></footer>
+</body>
+</html>

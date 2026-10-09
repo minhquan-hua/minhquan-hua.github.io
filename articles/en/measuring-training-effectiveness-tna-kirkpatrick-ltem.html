@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measuring training effectiveness: from needs analysis to Kirkpatrick and LTEM — Hua Minh Quan</title>
+<meta name="description" content="Why measuring training effectiveness starts before the course, and how needs analysis (TNA/LNA) connects to Kirkpatrick and LTEM.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Measuring training effectiveness: from needs analysis to Kirkpatrick and LTEM">
+<meta property="og:description" content="Why measuring training effectiveness starts before the course, and how needs analysis (TNA/LNA) connects to Kirkpatrick and LTEM.">
+<link rel="alternate" hreflang="vi" href="../do-luong-hieu-qua-dao-tao-tna-kirkpatrick-ltem.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #0F1E3A; --navy-800: #16284B; --navy-700: #1F3A68; --navy-100: #E6ECF5;
+    --ink: #1A2233; --muted: #5B6475; --line: #DCE1E8; --paper: #FFFFFF; --paper-alt: #F5F7FA;
+    --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.75; font-size: 17px; }
+  a { color: var(--navy-700); }
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy-900); text-decoration: none; white-space: nowrap; }
+  .nav-right { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+  .lang-switch { font-size: 0.82rem; font-weight: 600; color: var(--muted); display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+  .lang-switch a { color: var(--muted); text-decoration: none; }
+  .lang-switch a:hover { color: var(--navy-700); }
+  .lang-switch .on { color: var(--navy-900); border-bottom: 2px solid var(--navy-700); }
+  .lang-switch .sep { color: var(--line); }
+  .btn-home { font-size: 0.85rem; font-weight: 600; color: var(--navy-800); text-decoration: none; border: 1px solid var(--navy-800); padding: 6px 12px; border-radius: 4px; white-space: nowrap; }
+  .btn-home:hover { background: var(--navy-800); color: #fff; }
+  .article-hero { background: var(--navy-900); color: #fff; padding: 80px 0 64px; }
+  .col { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9FB3D6; font-weight: 600; }
+  .article-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4.6vw, 2.8rem); line-height: 1.2; margin: 16px 0 16px; }
+  .article-hero .sub { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: #C9D3E4; }
+  .meta { margin-top: 28px; font-size: 0.85rem; color: #9FB3D6; }
+  article { padding: 48px 0 40px; }
+  .intro-note { list-style: none; font-size: 0.88rem; color: var(--muted); font-style: italic; border-left: 2px solid var(--line); padding-left: 16px; margin: 0 0 36px 0 !important; }
+  .intro-note li { margin-bottom: 4px !important; }
+  article h2 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; color: var(--navy-900); line-height: 1.3; margin: 48px 0 18px; }
+  article h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--navy-800); margin: 34px 0 12px; }
+  article p { margin-bottom: 18px; }
+  article ul, article ol { margin: 0 0 20px 22px; }
+  article li { margin-bottom: 8px; }
+  article strong { color: var(--navy-900); }
+  .xref { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 500; }
+  .pull { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--navy-800); border-left: 3px solid var(--navy-700); padding: 4px 0 4px 20px; margin: 28px 0; }
+  sup a { text-decoration: none; font-size: 0.78em; font-weight: 600; }
+  .table-wrap { overflow-x: auto; margin: 24px 0 28px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.9rem; line-height: 1.55; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy-800); color: #fff; font-weight: 600; font-size: 0.82rem; }
+  tr:nth-child(even) td { background: var(--paper-alt); }
+  td:first-child { font-weight: 600; color: var(--navy-900); width: 22%; }
+  .fig { margin: 28px 0 32px; }
+  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fig-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+  .fig figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+  .series { margin-top: 56px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 4px; padding: 22px 24px; }
+  .series-title { font-family: var(--serif); font-weight: 600; color: var(--navy-900); font-size: 1.1rem; margin-bottom: 10px; }
+  .series ol { margin: 0 0 0 20px !important; font-size: 0.95rem; }
+  .series li { margin-bottom: 6px; }
+  .series li.cur span { font-weight: 600; color: var(--navy-900); }
+  .series li.cur em { color: var(--muted); font-size: 0.85em; }
+  .refs { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 12px; }
+  .refs ol { font-size: 0.86rem; color: var(--muted); line-height: 1.6; margin-left: 20px; }
+  .refs li { margin-bottom: 12px; word-break: break-word; }
+  .refs li:target { background: var(--navy-100); }
+  .back-wrap { margin-top: 40px; }
+  .btn-back { display: inline-block; background: var(--navy-800); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.92rem; padding: 12px 20px; border-radius: 4px; }
+  .btn-back:hover { background: var(--navy-700); }
+  .author { background: var(--paper-alt); padding: 48px 0; margin-top: 40px; }
+  .author p { font-size: 0.95rem; color: var(--muted); }
+  .author strong { color: var(--navy-900); font-family: var(--serif); font-size: 1.1rem; display: block; margin-bottom: 6px; }
+  .author .links { margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; }
+  footer { background: var(--navy-900); color: #8A9AB8; font-size: 0.82rem; padding: 26px 0; }
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .nav, .col { padding: 0 16px; }
+    .brand { font-size: 1.05rem; }
+    .nav-right { gap: 10px; }
+    .btn-home { padding: 5px 9px; font-size: 0.8rem; }
+    .article-hero { padding: 56px 0 44px; }
+    .fig-svg { min-width: 560px; }
+  }
+  @media (max-width: 420px) {
+    .brand { display: none; }
+    .nav { justify-content: space-between; }
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="../../index.html" class="brand">Hua Minh Quan</a>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language"><a href="../do-luong-hieu-qua-dao-tao-tna-kirkpatrick-ltem.html">Tiếng Việt</a><span class="sep">|</span><span class="on">English</span></div>
+      <a href="../../index.html" class="btn-home">← Home</a>
+    </div>
+  </div>
+</header>
+<section class="article-hero">
+  <div class="col">
+    <div class="eyebrow">Series · Part 2 · Measurement</div>
+    <h1>Measuring training effectiveness: from needs analysis to Kirkpatrick and LTEM</h1>
+    <p class="sub">Before you measure, diagnose</p>
+    <div class="meta">Hua Minh Quan · October 2026 · 9 min read</div>
+  </div>
+</section>
+<article>
+  <div class="col">
+    <ul class="intro-note"><li>This article draws on academic research, reports from research institutes and management consultancies, and the author's observations from delivering training projects with organizations. Names and personal details have been changed.</li><li>Sources are numbered and listed at the end of the article.</li><li>AI tools were used for data synthesis, editing and publishing.</li></ul>
+<p>In <a class="xref" href="beyond-training-three-ld-challenges.html">the previous article</a>, I outlined three challenges that L&amp;D teams often have to tackle at the same time: budget, measuring effectiveness, and workload. This article focuses on the second one: measurement. But rather than opening with evaluation models, it takes a step back to training needs analysis, because most of what can be measured after a course has already been decided before the course begins. In short: before you measure, diagnose.</p>
+
+<h2>Measurement starts before the course</h2>
+<p>A program can only be called effective if we know exactly what it was designed to change. It sounds obvious, yet it is easily overlooked when planning evaluation. Why? Because in practice, organizations can easily end up in situations where learning objectives and evaluation criteria are written after the course has already been chosen (training requests that “pop up” from a department or the board are one example).</p>
+<p>Jack and Patti Phillips's ROI Methodology includes a principle that I think is well worth keeping in mind: without baseline data, assume no improvement has occurred <sup><a href="#ref-1">[1]</a></sup>. In other words, <strong>measurement actually begins at the needs analysis stage</strong>, when the L&amp;D team captures the current state before any intervention, through training or otherwise, takes place.</p>
+<p>The four types of needs in Dana Gaines Robinson's <em>performance consulting</em> model, <a class="xref" href="beyond-training-three-ld-challenges.html">discussed in the previous article</a>, also serve as a map for measurement <sup><a href="#ref-2">[2]</a></sup>: business needs tell you which results to track; performance needs tell you which on-the-job behaviors to observe; individual learning needs tell you what people must know and be able to do; and organizational conditions tell you what may block application, even when people have learned well.</p>
+<figure class="fig"><div class="fig-scroll"><svg class="fig-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="rb-t">
+<title id="rb-t">Four types of needs, four things to measure</title>
+<defs><marker id="rb-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#1F3A68" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="720" height="400" fill="#FFFFFF"/>
+<text x="40" y="44" font-family="'Source Serif 4', Georgia, serif" font-size="22" font-weight="600" fill="#0F1E3A">Four types of needs, four things to measure</text>
+<rect x="40" y="76" width="410" height="64" rx="4" fill="#16284B" stroke="#16284B" stroke-width="1"/>
+<text x="58" y="100" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#FFFFFF">Business needs</text>
+<text x="58" y="121" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#C9D3E4">Which results to track</text>
+<rect x="40" y="168" width="410" height="64" rx="4" fill="#E6ECF5" stroke="#1F3A68" stroke-width="1"/>
+<text x="58" y="192" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#0F1E3A">Performance needs</text>
+<text x="58" y="213" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#1F3A68">Which on-the-job behaviors to observe</text>
+<line x1="245.0" y1="142" x2="245.0" y2="165" stroke="#1F3A68" stroke-width="1.2" marker-end="url(#rb-ah)"/>
+<rect x="40" y="260" width="410" height="64" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="58" y="284" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#0F1E3A">Individual learning needs</text>
+<text x="58" y="305" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">What people must know and be able to do</text>
+<line x1="245.0" y1="234" x2="245.0" y2="257" stroke="#1F3A68" stroke-width="1.2" marker-end="url(#rb-ah)"/>
+<rect x="482" y="168" width="198" height="156" rx="4" fill="#FFFFFF" stroke="#1F3A68" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="498" y="198" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Organizational</text>
+<text x="498" y="219" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">conditions</text>
+<text x="498" y="249" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">What may block</text>
+<text x="498" y="269" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">application, even when</text>
+<text x="498" y="289" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">learning went well</text>
+<line x1="480" y1="200.0" x2="454" y2="200.0" stroke="#1F3A68" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#rb-ah)"/>
+<line x1="480" y1="292.0" x2="454" y2="292.0" stroke="#1F3A68" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#rb-ah)"/>
+<text x="40" y="376" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#5B6475">Based on Dana Gaines Robinson's performance consulting model (Weiss, 2015, ATD). Diagram: Hua Minh Quan.</text>
+</svg></div><figcaption>Figure 1. Four types of needs and what to measure. Based on Dana Gaines Robinson's performance consulting model <sup><a href="#ref-2">[2]</a></sup>.</figcaption></figure>
+
+<h2>Needs analysis: more than a survey</h2>
+<p>In many organizations, training needs analysis (TNA) is understood as a survey sent to departments at the end of the year, asking what they would like to learn. CIPD proposes a broader view through learning needs analysis (LNA): an ongoing “health check” of people capability across the organization, rather than a one-off exercise before a course is launched <sup><a href="#ref-3">[3]</a></sup>. According to CIPD, analysis should take place at three levels, viewed in relation to one another:</p>
+<ul>
+<li><strong>Organization:</strong> strategy, business goals and major upcoming changes.</li>
+<li><strong>Department or project:</strong> performance requirements for each team responsible for a specific area of work.</li>
+<li><strong>Individual:</strong> the gap between current capability and what the role requires.</li>
+</ul>
+<p>Nor should the data come from a single source. CIPD lists many channels that can be combined: organizational data; interviews and group discussions; informal conversations with stakeholders; observation of team meetings; surveys; performance data; competency frameworks; and AI-assisted analysis. It adds two notable recommendations: prioritize the capabilities that affect business performance, and always consider solutions other than running a course <sup><a href="#ref-3">[3]</a></sup>.</p>
+
+<h3>When skills data is thin, in both volume and depth</h3>
+<p>Many organizations want to invest in learning and development without a clear view of their own people's capabilities. A 2026 survey by The Harris Poll for the University of Phoenix found that only 43% of HR leaders are confident their employees have the skills needed for an increasingly automated workplace, and fewer than half believe their managers are equipped to identify and assess skill gaps together with employees. Skill gaps are identified mainly through manager assessments and periodic performance reviews <sup><a href="#ref-4">[4]</a></sup>.</p>
+<p>Earlier, McKinsey recommended that the first step of any reskilling strategy is a <strong>systematic diagnosis</strong>: comparing the supply of each existing skill with the business's strategic needs, role group by role group, before deciding whether to build or hire <sup><a href="#ref-5">[5]</a></sup>. Its 2019 survey found that 87% of organizations were facing or expected to face skill gaps, yet only 33% felt prepared to address them <sup><a href="#ref-5">[5]</a></sup>.</p>
+<p>When data comes mainly from managers' assessments, and managers themselves are unsure how to assess, LNA/TNA has to triangulate across multiple sources. This is where an L&amp;D professional's research and consulting skills show most clearly: <strong>asking the right questions, hearing what is left unsaid, and pulling scattered pieces of information together into an insight solid enough to act on.</strong></p>
+<p>In <a class="xref" href="best-performer-not-always-best-manager.html">the next article, on building capability for middle managers</a>, I look at how to build a competency framework, which in turn supports planning how to measure and close capability gaps for a specific role. The framework draws on FranklinCovey's <em>The 6 Critical Practices for Leading a Team®</em>, which I suggest extending into a concrete competency “dictionary” for managers, serving as the basis for measuring before and after the learning journey.</p>
+
+<h2>From needs to measures</h2>
+<p>Once needs are clear at each level, the evaluation plan can be sketched out during the analysis itself. The table below suggests how to link each type of need to the questions to answer during TNA/LNA and to what should be measured after training:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Type of need</th><th>Question during needs analysis</th><th>What to measure after training</th><th>Model equivalent</th></tr></thead>
+<tbody>
+<tr><td>Business results</td><td>Which business metric needs to change? Where does it stand today?</td><td>That same metric, against the baseline</td><td>Kirkpatrick Level 4 · LTEM Tier 8</td></tr>
+<tr><td>Job performance</td><td>What do strong performers do differently from the rest?</td><td>Behavior on the job</td><td>Kirkpatrick Level 3 · LTEM Tier 7</td></tr>
+<tr><td>Individual learning</td><td>Which knowledge and skills are missing to perform that behavior?</td><td>Decision-making competence and task competence</td><td>Kirkpatrick Level 2 · LTEM Tiers 4–6</td></tr>
+<tr><td>Organizational conditions</td><td>Do processes, tools and line managers support or hinder?</td><td>Barriers to application, tracked in parallel</td><td>No dedicated level; a common reason Level 3 is not reached</td></tr>
+</tbody></table></div>
+
+<h2>Kirkpatrick: the profession's common language</h2>
+<p>The most familiar tool for training professionals is Kirkpatrick's four-level model: <em>Reaction → Learning → Behavior → Results</em> <sup><a href="#ref-6">[6]</a></sup>.</p>
+<ul>
+<li><strong>Strengths:</strong> it is simple, easy to explain to leaders, and has become the profession's common language. Say “this program only measures up to Level 2” and anyone in the field immediately sees where the gap is.</li>
+<li><strong>Limitations:</strong> most programs stop at Levels 1 and 2, meaning end-of-course surveys and tests. The model is also often read as an automatic causal chain: satisfied learners will learn, and people who learn will behave differently (an assumption that, in practice, has many gaps and rarely produces convincing evidence). In addition, Level 2 “Learning” lumps together very different things, from recalling knowledge to being able to perform a task. That is why I see Kirkpatrick's levels as more of a reference point than a tool to apply in practice.</li>
+</ul>
+
+<h2>LTEM: a deeper approach focused on real-world application</h2>
+<p>Will Thalheimer, a learning researcher, published the Learning-Transfer Evaluation Model (LTEM) in 2018 as an alternative to Kirkpatrick. He argues that the four-level model has “done a tremendous amount of harm” by leading training professionals to settle for shallow evaluation <sup><a href="#ref-7">[7]</a></sup>. LTEM has eight tiers:</p>
+<ul>
+<li><strong>Tiers 1–2 – Attendance and Activity:</strong> learners show up and take part.</li>
+<li><strong>Tier 3 – Learner Perceptions.</strong></li>
+<li><strong>Tier 4 – Knowledge.</strong></li>
+<li><strong>Tier 5 – Decision-Making Competence:</strong> knowing what to do in a realistic situation.</li>
+<li><strong>Tier 6 – Task Competence:</strong> being able to do it.</li>
+<li><strong>Tier 7 – Transfer:</strong> applying it in real work.</li>
+<li><strong>Tier 8 – Effects of Transfer:</strong> on learners, teams and the organization.</li>
+</ul>
+<figure class="fig"><div class="fig-scroll"><svg class="fig-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="ltem-t ltem-d">
+<title id="ltem-t">LTEM: eight tiers of learning evaluation</title>
+<desc id="ltem-d">A staircase of eight tiers rising from attendance to effects of transfer. Tiers 1 to 4 are foundations that are not enough on their own; tiers 5 and 6 show competence; tiers 7 and 8 show transfer to the job and its effects. Adapted from Thalheimer (2024), LTEM v13.</desc>
+<rect width="720" height="520" fill="#FFFFFF"/>
+<text x="40" y="44" font-family="'Source Serif 4', Georgia, serif" font-size="22" font-weight="600" fill="#0F1E3A">LTEM: eight tiers of learning evaluation</text>
+<rect x="194" y="72" width="320" height="42" rx="4" fill="#16284B" stroke="#16284B" stroke-width="1"/>
+<text x="210" y="93.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#9FB3D6">8</text>
+<text x="234" y="93.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#FFFFFF">Effects of transfer</text>
+<rect x="172" y="122" width="320" height="42" rx="4" fill="#16284B" stroke="#16284B" stroke-width="1"/>
+<text x="188" y="143.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#9FB3D6">7</text>
+<text x="212" y="143.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#FFFFFF">Transfer</text>
+<rect x="150" y="172" width="320" height="42" rx="4" fill="#E6ECF5" stroke="#1F3A68" stroke-width="1"/>
+<text x="166" y="193.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#1F3A68">6</text>
+<text x="190" y="193.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#0F1E3A">Task competence</text>
+<rect x="128" y="222" width="320" height="42" rx="4" fill="#E6ECF5" stroke="#1F3A68" stroke-width="1"/>
+<text x="144" y="243.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#1F3A68">5</text>
+<text x="168" y="243.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#0F1E3A">Decision-making competence</text>
+<rect x="106" y="272" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="122" y="293.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">4</text>
+<text x="146" y="293.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Knowledge</text>
+<rect x="84" y="322" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="100" y="343.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">3</text>
+<text x="124" y="343.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Learner perceptions</text>
+<rect x="62" y="372" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="78" y="393.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">2</text>
+<text x="102" y="393.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Activity</text>
+<rect x="40" y="422" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="56" y="443.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">1</text>
+<text x="80" y="443.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Attendance</text>
+<path d="M540 74 H548 V162 H540" fill="none" stroke="#1F3A68" stroke-width="1"/>
+<text x="562" y="109.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Transfer</text>
+<text x="562" y="129.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Used on the job</text>
+<path d="M540 174 H548 V262 H540" fill="none" stroke="#1F3A68" stroke-width="1"/>
+<text x="562" y="209.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Competence</text>
+<text x="562" y="229.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Can apply it</text>
+<path d="M540 274 H548 V462 H540" fill="none" stroke="#1F3A68" stroke-width="1"/>
+<text x="562" y="350.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Foundations</text>
+<text x="562" y="370.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Not enough alone</text>
+<text x="562" y="388.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Most stop at 3–4</text>
+<text x="40" y="498" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#5B6475">Adapted from Thalheimer, W. (2024). The Learning-Transfer Evaluation Model (LTEM), v13. Diagram: Hua Minh Quan.</text>
+</svg></div><figcaption>Figure 2. The eight tiers of LTEM. Adapted from Thalheimer (2024) <sup><a href="#ref-7">[7]</a></sup>.</figcaption></figure>
+<p>According to Thalheimer, the first four tiers are not enough to show that learning is effective, yet most organizations still stop at Tiers 3–4: satisfaction surveys and knowledge tests <sup><a href="#ref-7">[7]</a></sup>. He also recommends measuring a few days after the session rather than at the end of class, to see what learners actually remember.</p>
+<p>LTEM's most useful feature for L&amp;D practitioners is that Tiers 5 and 6 are within easy reach. For example, after a coaching skills course for managers, instead of only handing out a survey, learners can work through a simulated one-on-one scenario one to two weeks later. This does not yet require KPI data from other departments, but it already tells you more than a satisfaction score.</p>
+<p>Tier 7 is where many programs lose momentum when it comes to measurement. According to CIPD, only 8% of L&amp;D teams prioritize learning transfer, meaning applying what has been learned in everyday work <sup><a href="#ref-8">[8]</a></sup>. This is also where the “organizational conditions” row in the table above earns its place: if the TNA has shown that line managers are not supportive, or that processes do not allow people to work differently, L&amp;D knows in advance that Tier 7 will be hard to reach and can prepare from the outset.</p>
+
+<h2>Closing thoughts</h2>
+<p>No evaluation model is of much use when a program has defined the wrong problem from the start. Kirkpatrick, LTEM or even ROI only work when L&amp;D knows exactly what needs to change, for whom, and where things stand today. That is why the time most worth investing in measurement usually goes into needs analysis.</p>
+
+    <nav class="series" aria-label="Series">
+      <div class="series-title">Series: Three challenges for L&amp;D</div>
+      <ol><li><a href="beyond-training-three-ld-challenges.html">When L&amp;D is about more than training and developing people</a></li><li class="cur"><span>Measuring training effectiveness: from needs analysis to Kirkpatrick and LTEM</span> <em>(you are here)</em></li><li><a href="best-performer-not-always-best-manager.html">The best performer isn't always the best manager</a></li></ol>
+    </nav>
+    <div class="refs">
+      <h2>References</h2>
+      <ol>
+<li id="ref-1">Phillips, P. P., &amp; Phillips, J. J. (2019). <em>ROI Basics</em> (2nd ed.). ATD Press. <a href="https://roiinstitute.net/wp-content/uploads/2021/06/ROI-Basics-Second-Edition_ebook.pdf" target="_blank" rel="noopener">roiinstitute.net</a></li>
+<li id="ref-2">Weiss, R. P. (2015, May 8). Performance Consulting: A Classic Revisited (interview with Dana Gaines Robinson). ATD. <a href="https://www.td.org/insights/performance-consulting-a-classic-revisited" target="_blank" rel="noopener">td.org</a></li>
+<li id="ref-3">Hayden, D. Learning needs analysis. CIPD factsheet. <a href="https://www.cipd.org/en/knowledge/factsheets/learning-needs-factsheet/" target="_blank" rel="noopener">cipd.org</a></li>
+<li id="ref-4">Golden, R. (2026, September 30). HR may face a 'skills visibility gap' in the AI age. HR Dive. <a href="https://hrdive.com/news/hr-may-face-skills-visibility-gap-in-the-ai-age/831744" target="_blank" rel="noopener">hrdive.com</a></li>
+<li id="ref-5">Agrawal, S., De Smet, A., Poplawski, P., &amp; Reich, A. (2020). Beyond hiring: How companies are reskilling to address talent gaps. McKinsey &amp; Company. <a href="https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Organization/Our%20Insights/Beyond%20hiring%20How%20companies%20are%20reskilling%20to%20address%20talent%20gaps/Beyond-hiring-How-companies-are-reskilling.pdf" target="_blank" rel="noopener">mckinsey.com</a></li>
+<li id="ref-6">Kirkpatrick, D. L., &amp; Kirkpatrick, J. D. (2006). <em>Evaluating Training Programs: The Four Levels</em> (3rd ed.). Berrett-Koehler.</li>
+<li id="ref-7">Thalheimer, W. (2024). The Learning-Transfer Evaluation Model (LTEM), v13. Work-Learning Research. <a href="https://www.worklearning.com/ltem/" target="_blank" rel="noopener">worklearning.com</a></li>
+<li id="ref-8">Lancaster, A. (2024, December 3). How L&amp;D can create value: Focusing on social collaborative learning. CIPD. <a href="https://www.cipd.org/en/views-and-insights/thought-leadership/insight/learning-value-social-collaborative/" target="_blank" rel="noopener">cipd.org</a></li>
+
+      </ol>
+    </div>
+    <div class="back-wrap"><a href="../../index.html#articles" class="btn-back">← Back to home</a></div>
+  </div>
+</article>
+<section class="author">
+  <div class="col">
+    <strong>Hua Minh Quan</strong>
+    <p>Learning &amp; Development, Ho Chi Minh City. Engineer by training, with years in education and corporate training consulting.</p>
+    <div class="links">
+      <a href="../../index.html">Home</a>
+      <a href="https://www.linkedin.com/in/huaminhquan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:minhquan.hua.bio@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+<footer><div class="col">© 2026 Hua Minh Quan</div></footer>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đo lường hiệu quả đào tạo: từ phân tích nhu cầu đến Kirkpatrick và LTEM — Hua Minh Quan</title>
+<meta name="description" content="Vì sao đo lường hiệu quả đào tạo bắt đầu từ trước khóa học, và cách nối phân tích nhu cầu (TNA/LNA) với Kirkpatrick và LTEM.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Đo lường hiệu quả đào tạo: từ phân tích nhu cầu đến Kirkpatrick và LTEM">
+<meta property="og:description" content="Vì sao đo lường hiệu quả đào tạo bắt đầu từ trước khóa học, và cách nối phân tích nhu cầu (TNA/LNA) với Kirkpatrick và LTEM.">
+<link rel="alternate" hreflang="en" href="en/measuring-training-effectiveness-tna-kirkpatrick-ltem.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #0F1E3A; --navy-800: #16284B; --navy-700: #1F3A68; --navy-100: #E6ECF5;
+    --ink: #1A2233; --muted: #5B6475; --line: #DCE1E8; --paper: #FFFFFF; --paper-alt: #F5F7FA;
+    --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.75; font-size: 17px; }
+  a { color: var(--navy-700); }
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy-900); text-decoration: none; white-space: nowrap; }
+  .nav-right { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+  .lang-switch { font-size: 0.82rem; font-weight: 600; color: var(--muted); display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+  .lang-switch a { color: var(--muted); text-decoration: none; }
+  .lang-switch a:hover { color: var(--navy-700); }
+  .lang-switch .on { color: var(--navy-900); border-bottom: 2px solid var(--navy-700); }
+  .lang-switch .sep { color: var(--line); }
+  .btn-home { font-size: 0.85rem; font-weight: 600; color: var(--navy-800); text-decoration: none; border: 1px solid var(--navy-800); padding: 6px 12px; border-radius: 4px; white-space: nowrap; }
+  .btn-home:hover { background: var(--navy-800); color: #fff; }
+  .article-hero { background: var(--navy-900); color: #fff; padding: 80px 0 64px; }
+  .col { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9FB3D6; font-weight: 600; }
+  .article-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4.6vw, 2.8rem); line-height: 1.2; margin: 16px 0 16px; }
+  .article-hero .sub { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: #C9D3E4; }
+  .meta { margin-top: 28px; font-size: 0.85rem; color: #9FB3D6; }
+  article { padding: 48px 0 40px; }
+  .intro-note { list-style: none; font-size: 0.88rem; color: var(--muted); font-style: italic; border-left: 2px solid var(--line); padding-left: 16px; margin: 0 0 36px 0 !important; }
+  .intro-note li { margin-bottom: 4px !important; }
+  article h2 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; color: var(--navy-900); line-height: 1.3; margin: 48px 0 18px; }
+  article h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--navy-800); margin: 34px 0 12px; }
+  article p { margin-bottom: 18px; }
+  article ul, article ol { margin: 0 0 20px 22px; }
+  article li { margin-bottom: 8px; }
+  article strong { color: var(--navy-900); }
+  .xref { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 500; }
+  .pull { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--navy-800); border-left: 3px solid var(--navy-700); padding: 4px 0 4px 20px; margin: 28px 0; }
+  sup a { text-decoration: none; font-size: 0.78em; font-weight: 600; }
+  .table-wrap { overflow-x: auto; margin: 24px 0 28px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.9rem; line-height: 1.55; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy-800); color: #fff; font-weight: 600; font-size: 0.82rem; }
+  tr:nth-child(even) td { background: var(--paper-alt); }
+  td:first-child { font-weight: 600; color: var(--navy-900); width: 22%; }
+  .fig { margin: 28px 0 32px; }
+  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fig-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+  .fig figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+  .series { margin-top: 56px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 4px; padding: 22px 24px; }
+  .series-title { font-family: var(--serif); font-weight: 600; color: var(--navy-900); font-size: 1.1rem; margin-bottom: 10px; }
+  .series ol { margin: 0 0 0 20px !important; font-size: 0.95rem; }
+  .series li { margin-bottom: 6px; }
+  .series li.cur span { font-weight: 600; color: var(--navy-900); }
+  .series li.cur em { color: var(--muted); font-size: 0.85em; }
+  .refs { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 12px; }
+  .refs ol { font-size: 0.86rem; color: var(--muted); line-height: 1.6; margin-left: 20px; }
+  .refs li { margin-bottom: 12px; word-break: break-word; }
+  .refs li:target { background: var(--navy-100); }
+  .back-wrap { margin-top: 40px; }
+  .btn-back { display: inline-block; background: var(--navy-800); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.92rem; padding: 12px 20px; border-radius: 4px; }
+  .btn-back:hover { background: var(--navy-700); }
+  .author { background: var(--paper-alt); padding: 48px 0; margin-top: 40px; }
+  .author p { font-size: 0.95rem; color: var(--muted); }
+  .author strong { color: var(--navy-900); font-family: var(--serif); font-size: 1.1rem; display: block; margin-bottom: 6px; }
+  .author .links { margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; }
+  footer { background: var(--navy-900); color: #8A9AB8; font-size: 0.82rem; padding: 26px 0; }
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .nav, .col { padding: 0 16px; }
+    .brand { font-size: 1.05rem; }
+    .nav-right { gap: 10px; }
+    .btn-home { padding: 5px 9px; font-size: 0.8rem; }
+    .article-hero { padding: 56px 0 44px; }
+    .fig-svg { min-width: 560px; }
+  }
+  @media (max-width: 420px) {
+    .brand { display: none; }
+    .nav { justify-content: space-between; }
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="../index.html#vi" class="brand">Hua Minh Quan</a>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language"><span class="on">Tiếng Việt</span><span class="sep">|</span><a href="en/measuring-training-effectiveness-tna-kirkpatrick-ltem.html">English</a></div>
+      <a href="../index.html#vi" class="btn-home">← Trang chủ</a>
+    </div>
+  </div>
+</header>
+<section class="article-hero">
+  <div class="col">
+    <div class="eyebrow">Loạt bài · Phần 2 · Đo lường</div>
+    <h1>Đo lường hiệu quả đào tạo: từ phân tích nhu cầu đến Kirkpatrick và LTEM</h1>
+    <p class="sub">Trước khi “đo”, hãy “lường”</p>
+    <div class="meta">Hua Minh Quan · Tháng 10, 2026 · 10 phút đọc</div>
+  </div>
+</section>
+<article>
+  <div class="col">
+    <ul class="intro-note"><li>Bài viết tổng hợp từ các nghiên cứu học thuật, báo cáo của các tổ chức nghiên cứu, tư vấn quản trị và quan sát của người viết trong quá trình triển khai dự án đào tạo cùng doanh nghiệp. Tên và chi tiết nhân vật đã được thay đổi.</li><li>Nguồn tham khảo được đánh số và liệt kê ở cuối bài.</li><li>Bài viết có sử dụng công cụ AI cho mục đích tổng hợp dữ liệu, hiệu đính và xuất bản.</li></ul>
+<p><a class="xref" href="khi-ld-khong-chi-la-chuyen-dao-tao.html">Bài trước</a> tôi đã nêu ba bài toán mà đội L&amp;D thường phải giải cùng lúc: ngân sách, đo lường hiệu quả và khối lượng công việc. Bài này sẽ thảo luận nhiều vào bài toán thứ hai - đo lường. Nhưng thay vì mở đầu bằng các mô hình đánh giá, bài viết lùi lại một bước, về khâu phân tích nhu cầu đào tạo, bởi phần lớn những gì có thể đo được sau khóa học đã được quyết định từ trước khi khóa học bắt đầu. Nói tóm lại, trước khi muốn “đo” thì phải “lường” trước đã.</p>
+
+<h2>Đo lường bắt đầu từ trước khóa học</h2>
+<p>Một chương trình chỉ có thể được gọi là hiệu quả khi biết rõ nó được tạo ra để thay đổi điều gì. Nghe qua thì rất là hiển nhiên, nhưng đây lại là yếu tố rất dễ bị bỏ qua khi lên kế hoạch đánh giá. Vì sao? Vì trong thực tế, doanh nghiệp hoàn toàn có khả năng nảy sinh những tình huống mà mục tiêu đào tạo và tiêu chí đánh giá được viết sau khi khóa học đã được chọn (các yêu cầu đào tạo “pop up” từ phòng ban hoặc BOD là một ví dụ).</p>
+<p>Phương pháp ROI của Jack và Patti Phillips có một nguyên tắc mà theo tôi, rất đáng để lưu ý: nếu không có số liệu ban đầu (baseline), thì coi như không có cải thiện nào <sup><a href="#ref-1">[1]</a></sup>. Nói cách khác, <strong>việc đo lường thực ra bắt đầu ở khâu phân tích nhu cầu</strong>, khi L&amp;D team ghi nhận hiện trạng trước khi mọi can thiệp (bằng đào tạo hay các hình thức khác) diễn ra.</p>
+<p>Bốn loại nhu cầu trong mô hình <em>performance consulting</em> của Dana Gaines Robinson, <a class="xref" href="khi-ld-khong-chi-la-chuyen-dao-tao.html">đã đề cập ở bài trước</a>, cũng là bản đồ tham khảo cho việc đo lường <sup><a href="#ref-2">[2]</a></sup>: Nhu cầu kinh doanh cho biết kết quả nào cần theo dõi; Nhu cầu hiệu suất cho biết hành vi nào cần quan sát trong công việc; Nhu cầu học tập của cá nhân cho biết người học cần biết và làm được gì; Còn điều kiện của tổ chức cho biết những gì có thể cản trở việc áp dụng, dù người học đã học tốt.</p>
+<figure class="fig"><div class="fig-scroll"><svg class="fig-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="rb-t">
+<title id="rb-t">Bốn loại nhu cầu, bốn điều cần đo</title>
+<defs><marker id="rb-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#1F3A68" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="720" height="400" fill="#FFFFFF"/>
+<text x="40" y="44" font-family="'Source Serif 4', Georgia, serif" font-size="22" font-weight="600" fill="#0F1E3A">Bốn loại nhu cầu, bốn điều cần đo</text>
+<rect x="40" y="76" width="410" height="64" rx="4" fill="#16284B" stroke="#16284B" stroke-width="1"/>
+<text x="58" y="100" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#FFFFFF">Nhu cầu kinh doanh</text>
+<text x="58" y="121" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#C9D3E4">Kết quả nào cần theo dõi</text>
+<rect x="40" y="168" width="410" height="64" rx="4" fill="#E6ECF5" stroke="#1F3A68" stroke-width="1"/>
+<text x="58" y="192" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#0F1E3A">Nhu cầu hiệu suất</text>
+<text x="58" y="213" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#1F3A68">Hành vi nào cần quan sát trong công việc</text>
+<line x1="245.0" y1="142" x2="245.0" y2="165" stroke="#1F3A68" stroke-width="1.2" marker-end="url(#rb-ah)"/>
+<rect x="40" y="260" width="410" height="64" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="58" y="284" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#0F1E3A">Nhu cầu học tập của cá nhân</text>
+<text x="58" y="305" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">Người học cần biết và làm được gì</text>
+<line x1="245.0" y1="234" x2="245.0" y2="257" stroke="#1F3A68" stroke-width="1.2" marker-end="url(#rb-ah)"/>
+<rect x="482" y="168" width="198" height="156" rx="4" fill="#FFFFFF" stroke="#1F3A68" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="498" y="198" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Điều kiện của tổ chức</text>
+<text x="498" y="228" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">Điều gì có thể cản trở</text>
+<text x="498" y="248" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">việc áp dụng, dù</text>
+<text x="498" y="268" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#5B6475">người học đã học tốt</text>
+<line x1="480" y1="200.0" x2="454" y2="200.0" stroke="#1F3A68" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#rb-ah)"/>
+<line x1="480" y1="292.0" x2="454" y2="292.0" stroke="#1F3A68" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#rb-ah)"/>
+<text x="40" y="376" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#5B6475">Dựa trên mô hình performance consulting của Dana Gaines Robinson (Weiss, 2015, ATD). Thiết kế: Hua Minh Quan.</text>
+</svg></div><figcaption>Hình 1. Bốn loại nhu cầu và điều cần đo. Dựa trên mô hình performance consulting của Dana Gaines Robinson <sup><a href="#ref-2">[2]</a></sup>.</figcaption></figure>
+
+<h2>Phân tích nhu cầu: nhiều hơn một phiếu khảo sát</h2>
+<p>Ở nhiều tổ chức, phân tích nhu cầu đào tạo (Training Need Analysis - TNA) thường được hiểu là một phiếu khảo sát gửi tới các phòng ban vào cuối năm, hỏi xem họ muốn học gì. CIPD đề xuất một cách nhìn rộng hơn với khái niệm phân tích nhu cầu học tập (Learning Need Analysis - LNA): đây là một hoạt động "kiểm tra sức khỏe" (health check) nên được tiến hành thường xuyên để theo dõi năng lực của con người trong tổ chức, chứ không phải một sự kiện chỉ làm một lần trước khi mở lớp <sup><a href="#ref-3">[3]</a></sup>. Theo CIPD, việc phân tích cần diễn ra ở ba cấp và được nhìn trong mối liên hệ với nhau:</p>
+<ul>
+<li><strong>Toàn tổ chức:</strong> chiến lược, mục tiêu kinh doanh và những thay đổi lớn sắp tới.</li>
+<li><strong>Phòng ban hoặc dự án:</strong> yêu cầu về hiệu suất của từng nhóm phụ trách công việc cụ thể.</li>
+<li><strong>Cá nhân:</strong> khoảng cách giữa năng lực hiện có và năng lực mà vị trí đó đòi hỏi.</li>
+</ul>
+<p>Dữ liệu cũng không nên đến từ một nguồn duy nhất. CIPD liệt kê nhiều kênh có thể kết hợp: Dữ liệu của tổ chức; phỏng vấn (interview) và thảo luận nhóm (group discussion); trao đổi không chính thức với các bên liên quan; quan sát các buổi họp nhóm; khảo sát; dữ liệu đánh giá hiệu suất; khung năng lực; và cả phân tích có hỗ trợ của AI. Kèm theo đó là 02 khuyến nghị đáng chú ý gồm: ưu tiên các năng lực quan trọng có tác động tới tình hình kinh doanh của doanh nghiệp, và luôn cân nhắc những giải pháp khác ngoài việc mở khóa đào tạo <sup><a href="#ref-3">[3]</a></sup>.</p>
+
+<h3>Khi dữ liệu về kỹ năng còn ít và mỏng (thiếu hụt về lượng lẫn chiều sâu dữ liệu)</h3>
+<p>Nhiều tổ chức gặp khó khi muốn triển khai hoạt động đào tạo và phát triển con người, nhưng chưa thực sự nhìn rõ năng lực của chính đội ngũ mình. Một khảo sát của The Harris Poll thực hiện cho University of Phoenix năm 2026 cho thấy chỉ 43% lãnh đạo nhân sự tin nhân viên có đủ kỹ năng cần thiết cho môi trường làm việc ngày càng tự động hóa, và chưa đến 50% cho rằng đội ngũ quản lý đủ năng lực nhận diện, đánh giá khoảng trống kỹ năng (skill gaps) cùng với nhân viên. Việc xác định các “gaps” này chủ yếu dựa vào nhận xét của quản lý và bản đánh giá hiệu suất định kỳ của nhân viên <sup><a href="#ref-4">[4]</a></sup>.</p>
+<p>Từ trước đó, McKinsey đã khuyến nghị bước đầu tiên của mọi chiến lược phát triển là <strong>chẩn đoán một cách có hệ thống</strong>: so sánh nguồn cung của từng kỹ năng hiện có với nhu cầu chiến lược của doanh nghiệp, theo từng nhóm vai trò, rồi mới quyết định tự đào tạo hay tuyển mới <sup><a href="#ref-5">[5]</a></sup>. Khảo sát năm 2019 của hãng cho thấy 87% tổ chức đang hoặc dự kiến đối mặt với khoảng cách về kỹ năng trong đội ngũ, nhưng chỉ 33% cho rằng mình sẵn sàng đối phó với vấn đề này <sup><a href="#ref-5">[5]</a></sup>.</p>
+<p>Khi nguồn dữ liệu chủ yếu đến từ bản nhận xét của quản lý, mà chính đội ngũ quản lý cũng chưa nắm chắc về cách đánh giá, LNA/TNA lúc này cần đối chiếu nhiều nguồn với nhau. Đây cũng là chỗ năng lực nghiên cứu và tư vấn của người làm L&amp;D thể hiện rõ nhất: <strong>đặt câu hỏi đúng, nghe ra điều chưa được nói, và tổng hợp những mảnh thông tin rời rạc thành một nhận định đủ chắc để ra quyết định.</strong></p>
+<p>Trong <a class="xref" href="nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html">bài viết tiếp theo về chủ đề Xây dựng Năng lực cho Quản lý Cấp trung</a>, tôi sẽ đề cập một chút về cách xây dựng bộ khung năng lực (competency framework), từ đó có kế hoạch đo lường và thu hẹp khoảng cách năng lực cho một vị trí cụ thể trong tổ chức. Bộ khung này lấy cảm hứng từ giải pháp “6 Thực hành Thiết yếu để Quản trị Đội ngũ” (6 Critical Practices For Leading A Team) từ FranklinCovey, từ đó tôi gợi ý phát triển thêm để có một bộ “từ điển” năng lực cụ thể cho các quản lý, từ đó làm cơ sở để đo lường trước và sau lộ trình học tập.</p>
+
+<h2>Từ nhu cầu đến chỉ số đo</h2>
+<p>Khi nhu cầu đã rõ ở từng tầng, kế hoạch đánh giá có thể được phác thảo ngay trong lúc phân tích. Bảng dưới đây gợi ý cách nối từng loại nhu cầu với câu hỏi cần trả lời trong TNA/LNA và điều cần đo lường sau đào tạo:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Loại nhu cầu</th><th>Câu hỏi khi phân tích nhu cầu</th><th>Điều cần đo sau đào tạo</th><th>Tương ứng mô hình</th></tr></thead>
+<tbody>
+<tr><td>Kết quả kinh doanh</td><td>Chỉ số kinh doanh nào cần thay đổi? Hiện đang ở mức nào?</td><td>Chính chỉ số đó, so với mức ban đầu</td><td>Kirkpatrick cấp 4 · LTEM tầng 8</td></tr>
+<tr><td>Hiệu suất công việc</td><td>Người làm tốt đang làm gì khác người chưa làm tốt?</td><td>Hành vi trong công việc thật</td><td>Kirkpatrick cấp 3 · LTEM tầng 7</td></tr>
+<tr><td>Học tập của cá nhân</td><td>Kiến thức, kỹ năng nào đang thiếu để làm được hành vi đó?</td><td>Năng lực ra quyết định và thực hiện nhiệm vụ</td><td>Kirkpatrick cấp 2 · LTEM tầng 4–6</td></tr>
+<tr><td>Điều kiện tổ chức</td><td>Quy trình, công cụ, quản lý trực tiếp đang hỗ trợ hay cản trở?</td><td>Rào cản khi áp dụng, theo dõi song song</td><td>Không có cấp riêng; là lý do phổ biến khiến cấp 3 không đạt</td></tr>
+</tbody></table></div>
+
+<h2>Kirkpatrick: ngôn ngữ chung của nghề</h2>
+<p>Công cụ quen thuộc nhất với người làm đào tạo là mô hình bốn cấp độ của Kirkpatrick: <em>Phản ứng → Học được → Thay đổi hành vi → Kết quả</em> <sup><a href="#ref-6">[6]</a></sup>.</p>
+<ul>
+<li><strong>Ưu điểm:</strong> đơn giản, dễ giải thích với lãnh đạo, và đã trở thành ngôn ngữ chung của ngành. Chỉ cần nói "chương trình này mới đo đến cấp 2" là người trong ngành hiểu ngay khoảng trống nằm ở đâu.</li>
+<li><strong>Hạn chế:</strong> phần lớn chương trình dừng ở cấp 1 và 2, tức phiếu khảo sát cuối khóa và bài kiểm tra. Mô hình cũng hay bị hiểu như một chuỗi nhân quả tự động: học viên hài lòng thì sẽ học được, học được thì sẽ làm khác đi (vốn thực tế cho thấy cách hiểu này còn nhiều kẽ hở và khó có thể trở thành kết quả có tính thuyết phục). Ngoài ra, cấp 2 "Học được" gộp chung nhiều thứ khác nhau, từ việc nhớ kiến thức đến việc làm được một nhiệm vụ. Vì vậy, tôi nhận thấy thang đo của Kirkpatrick mang tính tham khảo nhiều hơn khả năng áp dụng trong thực tế.</li>
+</ul>
+
+<h2>LTEM: cách tiếp cận có thêm chiều sâu và đặt trọng tâm vào khả năng áp dụng thực tế</h2>
+<p>Will Thalheimer, nhà nghiên cứu về học tập, công bố mô hình LTEM (Learning-Transfer Evaluation Model) năm 2018 như một đề xuất thay thế Kirkpatrick. Ông cho rằng mô hình bốn cấp đã “done a tremendous amount of harm”, vì khiến người làm đào tạo bằng lòng với những cách đánh giá thiếu chiều sâu <sup><a href="#ref-7">[7]</a></sup>. LTEM gồm tám tầng:</p>
+<ul>
+<li><strong>Tầng 1–2 – Tham dự và Hoạt động:</strong> học viên có mặt, có tham gia.</li>
+<li><strong>Tầng 3 – Cảm nhận của người học.</strong></li>
+<li><strong>Tầng 4 – Kiến thức.</strong></li>
+<li><strong>Tầng 5 – Năng lực ra quyết định:</strong> biết nên làm gì trong một tình huống thực tế.</li>
+<li><strong>Tầng 6 – Năng lực thực hiện nhiệm vụ:</strong> làm được việc đó.</li>
+<li><strong>Tầng 7 – Chuyển giao (transfer):</strong> áp dụng trong công việc thật.</li>
+<li><strong>Tầng 8 – Tác động của chuyển giao:</strong> lên người học, đội nhóm và tổ chức.</li>
+</ul>
+<figure class="fig"><div class="fig-scroll"><svg class="fig-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="ltem-t ltem-d">
+<title id="ltem-t">LTEM: eight tiers of learning evaluation</title>
+<desc id="ltem-d">A staircase of eight tiers rising from attendance to effects of transfer. Tiers 1 to 4 are foundations that are not enough on their own; tiers 5 and 6 show competence; tiers 7 and 8 show transfer to the job and its effects. Adapted from Thalheimer (2024), LTEM v13.</desc>
+<rect width="720" height="520" fill="#FFFFFF"/>
+<text x="40" y="44" font-family="'Source Serif 4', Georgia, serif" font-size="22" font-weight="600" fill="#0F1E3A">LTEM: eight tiers of learning evaluation</text>
+<rect x="194" y="72" width="320" height="42" rx="4" fill="#16284B" stroke="#16284B" stroke-width="1"/>
+<text x="210" y="93.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#9FB3D6">8</text>
+<text x="234" y="93.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#FFFFFF">Effects of transfer</text>
+<rect x="172" y="122" width="320" height="42" rx="4" fill="#16284B" stroke="#16284B" stroke-width="1"/>
+<text x="188" y="143.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#9FB3D6">7</text>
+<text x="212" y="143.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#FFFFFF">Transfer</text>
+<rect x="150" y="172" width="320" height="42" rx="4" fill="#E6ECF5" stroke="#1F3A68" stroke-width="1"/>
+<text x="166" y="193.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#1F3A68">6</text>
+<text x="190" y="193.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#0F1E3A">Task competence</text>
+<rect x="128" y="222" width="320" height="42" rx="4" fill="#E6ECF5" stroke="#1F3A68" stroke-width="1"/>
+<text x="144" y="243.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#1F3A68">5</text>
+<text x="168" y="243.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#0F1E3A">Decision-making competence</text>
+<rect x="106" y="272" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="122" y="293.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">4</text>
+<text x="146" y="293.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Knowledge</text>
+<rect x="84" y="322" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="100" y="343.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">3</text>
+<text x="124" y="343.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Learner perceptions</text>
+<rect x="62" y="372" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="78" y="393.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">2</text>
+<text x="102" y="393.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Activity</text>
+<rect x="40" y="422" width="320" height="42" rx="4" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+<text x="56" y="443.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="17" font-weight="600" fill="#8A93A3">1</text>
+<text x="80" y="443.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#5B6475">Attendance</text>
+<path d="M540 74 H548 V162 H540" fill="none" stroke="#1F3A68" stroke-width="1"/>
+<text x="562" y="109.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Transfer</text>
+<text x="562" y="129.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Used on the job</text>
+<path d="M540 174 H548 V262 H540" fill="none" stroke="#1F3A68" stroke-width="1"/>
+<text x="562" y="209.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Competence</text>
+<text x="562" y="229.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Can apply it</text>
+<path d="M540 274 H548 V462 H540" fill="none" stroke="#1F3A68" stroke-width="1"/>
+<text x="562" y="350.0" dominant-baseline="central" font-family="'Source Serif 4', Georgia, serif" font-size="16" font-weight="600" fill="#0F1E3A">Foundations</text>
+<text x="562" y="370.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Not enough alone</text>
+<text x="562" y="388.0" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#5B6475">Most stop at 3–4</text>
+<text x="40" y="498" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#5B6475">Adapted from Thalheimer, W. (2024). The Learning-Transfer Evaluation Model (LTEM), v13. Diagram: Hua Minh Quan.</text>
+</svg></div><figcaption>Hình 2. Tám tầng của LTEM. Phỏng theo Thalheimer (2024) <sup><a href="#ref-7">[7]</a></sup>.</figcaption></figure>
+<p>Theo Thalheimer, bốn tầng đầu chưa đủ để chứng minh việc học có hiệu quả, nhưng phần lớn tổ chức vẫn dừng ở tầng 3–4: khảo sát hài lòng và bài kiểm tra kiến thức <sup><a href="#ref-7">[7]</a></sup>. Ông cũng khuyến nghị đo sau buổi học vài ngày, thay vì ngay cuối lớp, để biết người học thực sự còn nhớ gì.</p>
+<p>Điểm hữu ích nhất của LTEM với người làm L&amp;D là tầng 5 và 6 nằm ngay trong tầm tay. Ví dụ, sau một khóa kỹ năng coaching cho quản lý, thay vì chỉ phát phiếu khảo sát, có thể cho học viên xử lý một tình huống 1:1 mô phỏng sau một đến hai tuần. Cách đo này chưa cần đến dữ liệu KPI từ phòng ban khác, nhưng đã nói được nhiều hơn so với đo lường mức độ hài lòng.</p>
+<p>Tầng 7 là nơi nhiều chương trình bị “đứt gánh”, “hụt hơi” nhất khi cố gắng đo lường. Theo CIPD, chỉ 8% đội L&amp;D ưu tiên learning transfer, tức việc đưa điều đã học vào công việc hằng ngày <sup><a href="#ref-8">[8]</a></sup>. Đây cũng là chỗ cột "điều kiện tổ chức" trong bảng ở trên phát huy tác dụng: nếu TNA đã chỉ ra quản lý trực tiếp không hỗ trợ hay quy trình không cho phép làm khác đi, L&amp;D biết trước tầng 7 sẽ khó đạt và có thể chuẩn bị từ đầu.</p>
+
+<h2>Lời kết</h2>
+<p>Không có mô hình đánh giá nào hữu dụng khi một chương trình đã xác định sai bài toán cần giải ngay từ đầu. Cách tiếp cận từ Kirkpatrick, LTEM hay kể cả ROI chỉ có tác dụng khi L&amp;D đã biết rõ mình cần thay đổi điều gì, ở ai, và hiện trạng đang ở đâu. Vì vậy, khoản đầu tư thời gian xứng đáng nhất cho việc đo lường thường nằm ở khâu phân tích nhu cầu.</p>
+
+    <nav class="series" aria-label="Series">
+      <div class="series-title">Loạt bài: Ba bài toán của L&amp;D</div>
+      <ol><li><a href="khi-ld-khong-chi-la-chuyen-dao-tao.html">Khi L&amp;D không chỉ là câu chuyện về đào tạo và phát triển con người</a></li><li class="cur"><span>Đo lường hiệu quả đào tạo: từ phân tích nhu cầu đến Kirkpatrick và LTEM</span> <em>(đang đọc)</em></li><li><a href="nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html">Người giỏi nhất chưa chắc là quản lý giỏi nhất</a></li></ol>
+    </nav>
+    <div class="refs">
+      <h2>Tài liệu tham khảo</h2>
+      <ol>
+<li id="ref-1">Phillips, P. P., &amp; Phillips, J. J. (2019). <em>ROI Basics</em> (2nd ed.). ATD Press. <a href="https://roiinstitute.net/wp-content/uploads/2021/06/ROI-Basics-Second-Edition_ebook.pdf" target="_blank" rel="noopener">roiinstitute.net</a></li>
+<li id="ref-2">Weiss, R. P. (2015, 5/8). Performance Consulting: A Classic Revisited (phỏng vấn Dana Gaines Robinson). ATD. <a href="https://www.td.org/insights/performance-consulting-a-classic-revisited" target="_blank" rel="noopener">td.org</a></li>
+<li id="ref-3">Hayden, D. Learning needs analysis. CIPD factsheet. <a href="https://www.cipd.org/en/knowledge/factsheets/learning-needs-factsheet/" target="_blank" rel="noopener">cipd.org</a></li>
+<li id="ref-4">Golden, R. (2026, 30/9). HR may face a 'skills visibility gap' in the AI age. HR Dive. <a href="https://hrdive.com/news/hr-may-face-skills-visibility-gap-in-the-ai-age/831744" target="_blank" rel="noopener">hrdive.com</a></li>
+<li id="ref-5">Agrawal, S., De Smet, A., Poplawski, P., &amp; Reich, A. (2020). Beyond hiring: How companies are reskilling to address talent gaps. McKinsey &amp; Company. <a href="https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Organization/Our%20Insights/Beyond%20hiring%20How%20companies%20are%20reskilling%20to%20address%20talent%20gaps/Beyond-hiring-How-companies-are-reskilling.pdf" target="_blank" rel="noopener">mckinsey.com</a></li>
+<li id="ref-6">Kirkpatrick, D. L., &amp; Kirkpatrick, J. D. (2006). <em>Evaluating Training Programs: The Four Levels</em> (3rd ed.). Berrett-Koehler.</li>
+<li id="ref-7">Thalheimer, W. (2024). The Learning-Transfer Evaluation Model (LTEM), v13. Work-Learning Research. <a href="https://www.worklearning.com/ltem/" target="_blank" rel="noopener">worklearning.com</a></li>
+<li id="ref-8">Lancaster, A. (2024, 3/12). How L&amp;D can create value: Focusing on social collaborative learning. CIPD. <a href="https://www.cipd.org/en/views-and-insights/thought-leadership/insight/learning-value-social-collaborative/" target="_blank" rel="noopener">cipd.org</a></li>
+
+      </ol>
+    </div>
+    <div class="back-wrap"><a href="../index.html#vi" class="btn-back">← Về trang chủ</a></div>
+  </div>
+</article>
+<section class="author">
+  <div class="col">
+    <strong>Hua Minh Quan</strong>
+    <p>Learning &amp; Development tại TP. Hồ Chí Minh. Nền tảng kỹ sư, nhiều năm trong giáo dục và tư vấn đào tạo doanh nghiệp.</p>
+    <div class="links">
+      <a href="../index.html#vi">Trang chủ</a>
+      <a href="https://www.linkedin.com/in/huaminhquan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:minhquan.hua.bio@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+<footer><div class="col">© 2026 Hua Minh Quan</div></footer>
+</body>
+</html>

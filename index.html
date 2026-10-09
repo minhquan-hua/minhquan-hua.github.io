@@ -244,13 +244,13 @@
         <div class="sec-num">02 — <span data-vi="Bài viết">Articles</span></div>
         <div>
           <h2 data-vi="Ghi chép &amp; suy ngẫm">Notes &amp; reflections</h2>
-          <p data-vi="Về học tập của người trưởng thành, văn hoá tổ chức và nghề L&amp;D.">On adult learning, organizational culture, and the craft of L&amp;D.</p>
+          <p data-vi="Loạt bài đầu tiên: ba bài toán của L&amp;D, và cách giải từng bài.">First series: three challenges for L&amp;D, and how to tackle each one.</p>
         </div>
       </div>
       <div class="articles">
-        <a class="article article-link" href="articles/nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html"><span class="kicker" data-vi="Quản lý &amp; Lãnh đạo">Management &amp; Leadership</span><h3>Người giỏi nhất chưa chắc là quản lý giỏi nhất</h3><p data-vi="Xây khung năng lực cho quản lý tuyến đầu và cấp trung: bắt đầu từ đâu?">Building a competency framework for first-line and middle managers: where to start? <em>(in Vietnamese)</em></p><span class="read" data-vi="Đọc bài →">Read →</span></a>
-        <div class="article"><span class="kicker" data-vi="Học tập">Learning</span><h3 data-vi="Tiêu đề bài viết 2">Article title 2</h3><p data-vi="Một câu tóm tắt nội dung bài viết.">A one-line summary of the article.</p><span class="soon" data-vi="Sắp ra mắt">Coming soon</span></div>
-        <div class="article"><span class="kicker" data-vi="Nghề nghiệp">Career</span><h3 data-vi="Tiêu đề bài viết 3">Article title 3</h3><p data-vi="Một câu tóm tắt nội dung bài viết.">A one-line summary of the article.</p><span class="soon" data-vi="Sắp ra mắt">Coming soon</span></div>
+        <a class="article article-link" href="articles/en/beyond-training-three-ld-challenges.html" data-href-en="articles/en/beyond-training-three-ld-challenges.html" data-href-vi="articles/khi-ld-khong-chi-la-chuyen-dao-tao.html"><span class="kicker" data-vi="Loạt bài · Phần 1">Series · Part 1</span><h3 data-vi="Khi L&amp;D không chỉ là câu chuyện về đào tạo">When L&amp;D is about more than training</h3><p data-vi="Ba bài toán L&amp;D phải giải cùng lúc: ngân sách, đo lường và khối lượng việc, và vì sao lời giải bắt đầu từ bài toán của doanh nghiệp.">Three challenges L&amp;D teams face at once (budget, measurement and workload) and why the answer starts with the business problem.</p><span class="read" data-vi="Đọc bài →">Read →</span></a>
+        <a class="article article-link" href="articles/en/measuring-training-effectiveness-tna-kirkpatrick-ltem.html" data-href-en="articles/en/measuring-training-effectiveness-tna-kirkpatrick-ltem.html" data-href-vi="articles/do-luong-hieu-qua-dao-tao-tna-kirkpatrick-ltem.html"><span class="kicker" data-vi="Loạt bài · Phần 2">Series · Part 2</span><h3 data-vi="Đo lường hiệu quả đào tạo: từ phân tích nhu cầu đến Kirkpatrick và LTEM">Measuring training effectiveness: from needs analysis to Kirkpatrick and LTEM</h3><p data-vi="Vì sao đo lường bắt đầu từ trước khóa học, và cách nối phân tích nhu cầu với Kirkpatrick, LTEM.">Why measurement starts before the course does, and how needs analysis connects to Kirkpatrick and LTEM.</p><span class="read" data-vi="Đọc bài →">Read →</span></a>
+        <a class="article article-link" href="articles/en/best-performer-not-always-best-manager.html" data-href-en="articles/en/best-performer-not-always-best-manager.html" data-href-vi="articles/nguoi-gioi-nhat-chua-chac-la-quan-ly-gioi-nhat.html"><span class="kicker" data-vi="Loạt bài · Phần 3">Series · Part 3</span><h3 data-vi="Người giỏi nhất chưa chắc là quản lý giỏi nhất">The best performer isn't always the best manager</h3><p data-vi="Khung năng lực cho quản lý tuyến đầu và cấp trung, xây trên sáu thực hành hằng ngày.">A competency framework for first-line and middle managers, built on six everyday practices.</p><span class="read" data-vi="Đọc bài →">Read →</span></a>
       </div>
     </div>
   </section>
@@ -299,6 +299,7 @@
     nodes.forEach(function (el) { el.setAttribute('data-en', el.innerHTML); });
     function setLang(lang) {
       nodes.forEach(function (el) { el.innerHTML = el.getAttribute('data-' + lang); });
+      document.querySelectorAll('[data-href-vi]').forEach(function (a) { a.setAttribute('href', a.getAttribute('data-href-' + lang)); });
       document.documentElement.lang = lang;
       document.querySelectorAll('.lang button').forEach(function (b) {
         b.classList.toggle('active', b.dataset.lang === lang);
